@@ -5,34 +5,27 @@
 
 <script>
   function changeCams(cam1, cam2){
- //   var c1 = document.getElementById(cam1);
-//    var c2 = document.getElementById(cam2);
-  //  var temp = document.getElementById(cam2);
-      console.log(document.getElementById(cam1)+"hh");
-//    c1.innerHTML = c2;
- //   c2.innerHTML = document.getElementById(cam1);
-
-//  document.getElementById(cam1).innerHTML= document.getElementById(cam2);
-  //    console.log(document.getElementById(cam1));
-
-   //   console.log(c1 + c2);  
-  
-/*    for (i in elems){
-
-      if ((" "+elems[i].className+" ").indexOf(" "+cam1+" ") > -100){
-        elems[i].innerHTML = cam2;
-        console.log(cam2);}
-      }
-
-      for (i in elems){
-      if ((" "+elems[i].className+" ").indexOf(" "+cam2+" ") > -100){
-        elems[i].innerHTML = cam1;
-        javascript: console.log(cam1);}
-
-      }
+   
+/*   var c1 = document.getElementById(cam1); //Gets the entire div
+    var c2 = document.getElementById(cam2); //Gets the entire div
+   console.log(c1);
+   console.log(c2);
+   console.log(cam1);
+   console.log(cam2);
  */
-    javascript: console.log('meh');
+   var c3;
+   c3 = document.getElementById(cam1).innerHTML;
+   document.getElementById(cam1).innerHTML = document.getElementById(cam2).innerHTML;
+   document.getElementById(cam2).innerHTML = c3;
+
+   javascript: console.log('meh');
   }  
+
+
+  function parttwo(text1){
+   var a = text1;
+  console.log("in part 2" + a);
+  }
 </script>
 
 </head>
@@ -42,7 +35,7 @@
 <div class='doctor'>
   <div class='webcam' id='maincam'>
     <h1>Me (Doctor)</h1>
-    <img src='pic.jpg' height='300px' width='400px'>
+    <img src='pic1.jpg' height='300px' width='400px'>
   </div>
   <div class='info' align='left';>
     <ul>
@@ -59,7 +52,7 @@
 
   <div class='webcam' id='smallcam'>
     <h1>Doctor Bob</h1>
-    <img src='pic2.jpg' height='150px' width='200px'>
+    <img src='pic2.jpg' height='300px' width='400px'>
   </div><!--webscreen-->
   <div class='info' align='left';>
     <ul>
