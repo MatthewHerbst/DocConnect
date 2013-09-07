@@ -1,18 +1,45 @@
+<?
+include_once 'head.php';
+?>
+
+
 <script>
 
+
+var radioButtonsClicked = false;
+
+$("input:radio").click(radioButtonClicked());
+
+function radioButtonClicked()
+{
+	radioButtonsClicked = true;
+	if($(this).val() == 'no')
+	{
+		return;
+	}
+	else if ($(this).val() == 'yes')
+	{
+		var stringToInsert = "<span class = 'fieldname'>Education/Medical University</span>"+
+								"<input type = 'text' maxlength = '30' /><br />"+
+							"<span class = 'fieldname'>Hospital/Medical Institution</span>"+
+							"input type = 'text' maxlenght = '30' /><br />";	
+		$(stringToInsert).insertBefore("input:submit");
+	}
+}
 function checkInput()
 {
-	if($("input").val() == "")
+	console.log("I get here");
+	if($("input").val() == "" || !radioButtonsClicked)
 	{
 		alert ("Please Fill in All parts of form");
 		return false;
 	}
+	
 }
 
 </script>
 
 <?
-include_once 'head.php';
 
 if($logInStatus)
 {
