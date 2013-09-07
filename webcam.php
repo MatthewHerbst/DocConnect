@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<?/*php include 'head.php' */?>
+<?php/*php include 'head.php' */?>
 <head>
 <link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
 

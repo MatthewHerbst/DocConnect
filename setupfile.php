@@ -4,7 +4,7 @@
 <h2>Creating Tables and Setting up Database</h2>
 </head>
 
-<?
+<?php
 include_once 'functionsneeded.php';
 
 
@@ -22,3 +22,5 @@ createTable('doctors', $doctorsTableFields);
 $locationsTableFields = "username VARCHAR(28), country VARCHAR(28),".
 						"state VARCHAR(28), city VARCHAR(28)";
 createTable ('userLocations', $locationsTableFields);
+
+?>
