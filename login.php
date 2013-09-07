@@ -3,7 +3,7 @@
 
 $error = $enteredUsername = $enteredPass = "";
 
-if (isset($_POST['enteredUsername']))
+if (isset($_POST['enteredUsername']) && !$logInStatus)
 {
     $enteredUsername = sanitizeString($_POST['enteredUsername']);
     $enteredPass = sanitizeString($_POST['enteredPass']);

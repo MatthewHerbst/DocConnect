@@ -8,6 +8,7 @@
 include_once 'functionsneeded.php';
 
 
+
 $membersTableFields = "username VARCHAR(28), password VARCHAR(128),".
 					"firstname VARCHAR(28), lastname VARCHAR(28), ".
 					"DOB VARCHAR(28), email VARCHAR(28), ".
@@ -28,5 +29,7 @@ createTable ('userLocations', $locationsTableFields);
 $doctorProfilesTableFields = "username VARCHAR(28), bio VARCHAR(3000),".
 							"rating INT, UNIQUE INDEX(username)";
 createTable ('doctorProfiles', $doctorProfilesTableFields)
+
+
 
 ?>
