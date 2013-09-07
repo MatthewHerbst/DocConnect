@@ -1,5 +1,7 @@
 <?php
 include_once 'head.php';
+include_once 'login.php';
+
 ?>
 	<div id='messagesDiv'></div>
 	<input type='text' id='nameInput' placeholder='Name'>
