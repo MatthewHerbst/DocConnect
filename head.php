@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang='en'><head>
-<meta name='author' content=''>
-<meta charset='utf-8'>
-<script type='text/javascript' src='js/firebase/firebase.js'></script>
-<script type='text/javascript' src='js/firebase/idle.js'></script>
-<script type='text/javascript' src='js/tokbox/TB.min.js'></script>
-<script type='text/javascript' src='js/jquery/jquery-1.10.2.min.js'></script>
-
+<html lang='en'>
+<head>
+	<meta name='author' content=''>
+	<meta charset='utf-8'>
+	<script type='text/javascript' src='js/firebase/firebase.js'></script>
+	<script type='text/javascript' src='js/firebase/idle.js'></script>
+	<script type='text/javascript' src='js/tokbox/TB.min.js'></script>
+	<script type='text/javascript' src='js/jquery/jquery-1.10.2.min.js'></script>
+	<link rel='stylesheet' href='styles.css' type='text/css'/>
 <?php
 session_start();
 
@@ -36,7 +37,6 @@ if(isset($_SESSION['user'])) {
 
 
 echo "<title>MedConnect - $userstr</title>
-	<link rel = 'stylesheet' href = 'styles.css' type = 'text/css' />
 	</head><body>
 	<div id='header'><img src='logo.png' height='100px'>
         </div>
