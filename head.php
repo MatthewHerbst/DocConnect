@@ -22,6 +22,8 @@ require_once 'tokbox/Opentok-PHP-SDK/OpenTokSession.php';
 require_once 'tok.php';
 
 
+$error = $enteredUsername = $enteredPass = "";
+
 if (isset($_POST['enteredUsername']))
 {
     $enteredUsername = sanitizeString($_POST['enteredUsername']);
@@ -66,8 +68,7 @@ echo "<title>$appname - $userstr</title>
 	<link rel = 'stylesheet' href = 'styles.css' type = 'text/css' />
 	</head><body>
 	<img src='logo.png' height='100px'>
-	<h1><div class = 'appname'>$appname - $userstr</div></h1>
-	</head><body><h1><div class = 'appname'>$appname - $userstr</div></h1>";
+	<h1><div class = 'appname'>$appname - $userstr</div></h1>";
 
 
 
@@ -82,7 +83,8 @@ if (!$logInStatus)
 	<input class = 'loginbox' type = 'password' maxlength = '16' name = 'enteredPass' value = '$enteredPass' /><br />
 	<br />
 	<span class = 'fieldname'></span>
-	<input type = 'submit' value = 'Login' />
+	<input type = 'submit' value = 'Login' /><br />
+	<a href = createAccount.php>Or Sign Up Here!</a>
 	</form><br /></div>
 _END;
 	die();
