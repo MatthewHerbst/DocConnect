@@ -1,5 +1,6 @@
 <?
 include_once 'head.php';
+echo "test";
 ?>
 	<div id='messagesDiv'></div>
 	<input type='text' id='nameInput' placeholder='Name'>
