@@ -1,4 +1,4 @@
-<script src='js/jquery-1.10.2.min.js'></script>
+<script src='js/jquery/jquery-1.10.2.min.js'></script>
 
 <?php
 
@@ -13,7 +13,7 @@ mysql_connect($dbhost, $dbuser, $dbpass) or die(mysql_error());
 
 mysql_select_db($dbname) or die(mysql_error());
 
-echo "<link href='stylesheet.css' rel='stylesheet' type='text/css'>";
+echo "<link href='styles.css' rel='stylesheet' type='text/css'>";
 
 function createTable($name, $query)
 {

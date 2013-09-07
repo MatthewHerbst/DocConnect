@@ -1,12 +1,31 @@
 <script>
 
+
+var radioButtonsClicked = false;
+
+$("input:radio").click()
+
+function radioButtonClicked()
+{
+	radioButtonsClicked = true;
+	if($(this).val() == 'no')
+	{
+		return;
+	}
+	else if ($(this).val() == 'yes')
+	{
+		var stringToInsert = "<span class = >"	
+	}
+}
 function checkInput()
 {
+	console.log("I get here");
 	if($("input").val() == "")
 	{
 		alert ("Please Fill in All parts of form");
 		return false;
 	}
+	
 }
 
 </script>
