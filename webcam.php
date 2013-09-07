@@ -1,9 +1,5 @@
 <!DOCTYPE HTML>
-<?php/*php include 'head.php' */?>
-<head>
-<img src='logo.png' height='100px'>
-<link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
-
+<?php include_once 'head.php' ?>
 <script>
   function changeCams(cam1, cam2){
    
@@ -21,18 +17,16 @@
   }  
 </script>
 
-</head>
-
-<body>
+	<div id="presenceDiv"></div>
 	<script type='text/javascript'>
-		var name = '<?php $_SESSION['user']?>';
-		var currentStatus = 'online';
+		var name = 'matt';//'<?php $_SESSION['user']?>';
+		var currentStatus = '★ online';
 		
 		//Reference to Firebase db
-		var presenceRef = new Firebase('https://docconnect.firebaseio.com/presence');
+		var userListRef = new Firebase('https://docconnect.firebaseio.com/presence');
 		
 		//Save a reference to myself
-		var myUserRef = presenceRef.push();
+		var myUserRef = userListRef.push();
 		
 		//Get a reference to my own presence status
 		var connectedRef = new Firebase('https://docconnect.firebaseio.com/.info/connected');
@@ -44,7 +38,59 @@
 				//Set the initial online status (for next time we come online)
 				setUserStatus(online);
 			} else {
+				//We need to catch anytime we are marked as offline and then set the correct status. We could 
+				//be marked as offline 1) on page load or 2) when we lose our internet connection temporarily.
+				setUserStatus(currentStatus);
 			}
+		});
+		
+		//A helper function to let us set our own state.
+		function setUserStatus(status) {
+			//Set our status in the list of online users.
+			currentStatus = status;
+			myUserRef.set({ name: name, status: status });
+		}
+		
+		function getMessageId(snapshot) {
+			return snapshot.name().replace(/[^a-z0-9\-\_]/gi,'');
+		}
+
+		//Update our GUI to show someone"s online status.
+		userListRef.on("child_added", function(snapshot) {
+			var user = snapshot.val();
+
+			$("<div/>")
+				.attr("id", getMessageId(snapshot))
+				.text(user.name + " is currently " + user.status)
+				.appendTo("#presenceDiv");
+		});
+
+		//Update our GUI to remove the status of a user who has left.
+		userListRef.on("child_removed", function(snapshot) {
+			$("#presenceDiv").children("#" + getMessageId(snapshot))
+				.remove();
+		});
+
+		//Update our GUI to change a user"s status.
+		userListRef.on("child_changed", function(snapshot) {
+			var user = snapshot.val();
+			$("#presenceDiv").children("#" + getMessageId(snapshot))
+				.text(user.name + " is currently " + user.status);
+		});
+
+		//Use idle/away/back events created by idle.js to update our status information.
+		document.onIdle = function () {
+			setUserStatus("☆ idle");
+		}
+		document.onAway = function () {
+			setUserStatus("☄ away");
+		}
+		document.onBack = function (isIdle, isAway) {
+			setUserStatus("★ online");
+		}
+
+		setIdleTimeout(5000);
+		setAwayTimeout(10000);
 	</script>
 
   <div class='container'>
@@ -97,5 +143,4 @@
       
       </div>
   </div>
-</body>
-</html>
+<?php include_once 'footer.php'; ?>
