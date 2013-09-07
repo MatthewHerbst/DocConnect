@@ -2,9 +2,10 @@
 <html lang='en'><head>
 <meta name='author' content=''>
 <meta charset='utf-8'>
-<script type='text/javascript' src='https://cdn.firebase.com/v0/firebase.js'></script>
-<script src='https://swww.tokbox.com/webrtc/v2.0/js/TB.min.js' type='text/javascript'></script>
-<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+<script type='text/javascript' src='js/firebase/firebase.js'></script>
+<script type='text/javascript' src='js/firebase/idle.js'></script>
+<script type='text/javascript' src='js/tokbox/TB.min.js'></script>
+<script type='text/javascript' src='js/jquery/jquery-1.10.2.min.js'></script>
 <link rel='stylesheet' type='text/css' href='styles.css' media='screen' />
 
 <?php
