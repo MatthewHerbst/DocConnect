@@ -32,19 +32,19 @@
       </div>
       
       <div class='doctor'>
-	<div class='smallcam' id='smallcam'>
+	<div class='smallcam' id='smallcam' onclick='changeCams("maincam", "smallcam")'>
 	  <img src='pic2.jpg' width='100%'> <!--100% of the div, which is 45% of box-->
 	</div>
 	
-	<div class='smallcam' id='smallcam2'>
+	<div class='smallcam' id='smallcam2' onclick='changeCams("maincam", "smallcam2")'>
 	  <img src='pic2.jpg' width='100%'>
 	</div>
 	
-	<div class='smallcam' id='smallcam3'>
+	<div class='smallcam' id='smallcam3' onclick='changeCams("maincam", "smallcam3")'>
 	  <img src='pic2.jpg' width='100%'>
 	</div>
 	
-	<div class='smallcam' id='smallcam4'>
+	<div class='smallcam' id='smallcam4' onclick='changeCams("maincam", "smallcam4")'>
 	  <img src='pic2.jpg' width='100%'>
 	</div>
       </div><!--doctor-->

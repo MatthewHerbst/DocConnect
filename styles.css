@@ -56,6 +56,9 @@ display:inline-block;
 float:left;
 }
 
+div.smallcam-hover{
+font-face:Impact;
+}
 
 #maincam{
 }
