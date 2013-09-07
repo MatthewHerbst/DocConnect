@@ -11,7 +11,7 @@ if(isset($_POST['firstname']) && isset($_POST['lastname'])
 	$userName = $_POST['username'];
 	$passwordEntered = $_POST['password'];
 	$DOB = $_POST['DOB'];
-	$email = $_POST['DOB'];
+	$email = $_POST['email'];
 	$doctorStatus = $_POST['doctorStatus'];
 }
 else
@@ -59,6 +59,8 @@ if ($doctorStatus)
 {
 	makeQuery("INSERT INTO doctors VALUES ('$userName', '$hospital', 
 				'$specialty', '$education')");
+	$nameReviewsTable = $userName."Reviews";
+	createTable($nameReviewsTable, 'rating INT, reviewText VARCHAR(3000)');
 }
 
 echo "<h2>Congratulations, you have successfully created an account</h2>"
