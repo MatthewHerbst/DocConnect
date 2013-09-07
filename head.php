@@ -7,6 +7,16 @@
 <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
 <link rel='stylesheet' type='text/css' href='styles.css' media='screen' />
 
+      <div class="masthead">
+        <h3 class="text-muted">Project name</h3>
+        <ul class="nav nav-justified">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">Demo</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
 <?php
 session_start();
 
