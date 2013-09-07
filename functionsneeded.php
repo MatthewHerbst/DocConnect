@@ -21,6 +21,7 @@ function createTable($name, $query)
     makeQuery("CREATE TABLE IF NOT EXISTS $name($query)");
 }
 
+//TODO: this is insecure - write methods for stuff in future
 function makeQuery($query)
 {
     $result = mysql_query($query) or die(mysql_error());

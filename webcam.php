@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <?php/*php include 'head.php' */?>
 <head>
+<img src='logo.png' height='100px'>
 <link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
 
 <script>
@@ -23,7 +24,32 @@
 </head>
 
 <body>
+	<script type='text/javascript'>
+		var name = '<?php $_SESSION['user']?>';
+		var currentStatus = 'online';
+		
+		//Reference to Firebase db
+		var presenceRef = new Firebase('https://docconnect.firebaseio.com/presence');
+		
+		//Save a reference to myself
+		var myUserRef = presenceRef.push();
+		
+		//Get a reference to my own presence status
+		var connectedRef = new Firebase('https://docconnect.firebaseio.com/.info/connected');
+		connectedRef.on('value', function(isOnline) {
+			if(isOnline.val()) {
+				//Remove ourself from the list if we lose internet connection
+				myUserRef.onDisconnect().remove();
+				
+				//Set the initial online status (for next time we come online)
+				setUserStatus(online);
+			} else {
+			}
+	</script>
+
   <div class='container'>
+<body align='center'>
+  <div class='container' align='center'>
     <div class='cam'>
       <div class='doctor'>
 	<div class='maincam' id='maincam'>
@@ -37,7 +63,7 @@
 	</div>
 	
 	<div class='smallcam' id='smallcam2' onclick='changeCams("maincam", "smallcam2")'>
-	  <img src='pic2.jpg' width='100%'>
+	  <img src='pic1.jpg' width='100%'>
 	</div>
 	
 	<div class='smallcam' id='smallcam3' onclick='changeCams("maincam", "smallcam3")'>
@@ -47,22 +73,25 @@
 	<div class='smallcam' id='smallcam4' onclick='changeCams("maincam", "smallcam4")'>
 	  <img src='pic2.jpg' width='100%'>
 	</div>
+ 
+	<div class='smallcam' id='smallcam5' onclick='changeCams("maincam", "smallcam4")'>
+	  <img src='pic2.jpg' width='100%'>
+	</div>
+
       </div><!--doctor-->
     </div>
       
     <div class='info' align='left'>
+      <h1>Information</h1>
       <ul>
 	<li>Name:</li>
 	<li>Location:</li>
 	<li>Specialist:</li>
 	<li>Local Time:</li>
       </ul>
-      
-      <div class='button'>
-	<button onclick='changeCams("maincam", "smallcam")'>Switch Screens</button>
-      </div>
-      
+            
       <div class='chat' align='left'>
+	<h1>Chat</h1>
 	<p> Person 1: <BR> Person 2:</p>
       </div>
       
