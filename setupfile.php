@@ -31,5 +31,5 @@ $doctorProfilesTableFields = "username VARCHAR(28), bio VARCHAR(3000),".
 createTable ('doctorProfiles', $doctorProfilesTableFields);
 
 
-echo "Table setup complete";
+echo "Table setup complete!";
 ?>
