@@ -113,33 +113,23 @@ var App = {
 
 	ctx.drawImage(video, 0, 0, w, h);
 	var imageData = ctx.getImageData(0, 0, w, h);
-	
-	img_u8 = new jsfeat.matrix_t(App.video.videoWidth, App.video.videoHeight, jsfeat.U8_t | jsfeat.C1_t);
 
+	//Greyscale conversion
+	img_u8 = new jsfeat.matrix_t(App.video.videoWidth, App.video.videoHeight, jsfeat.U8_t | jsfeat.C1_t);
+	jsfeat.imgproc.grayscale(imageData.data, img_u8.data);
+
+	//Corner Detection
 	corners = [];
 	var i = w*h;
 	while(--i >= 0) {
 	    corners[i] = new jsfeat.point2d_t(0,0,0,0);
 	}
-
-	jsfeat.imgproc.grayscale(imageData.data, img_u8.data);
-
 	jsfeat.fast_corners.set_threshold(App.options.threshold|0);
 	var count = jsfeat.fast_corners.detect(img_u8, corners, 5);
 
 	var data_u32 = new Uint32Array(imageData.data.buffer);
 	App.renderCorners(corners, count, data_u32, w);
 
-
-
-
-	// var data_u32 = new Uint32Array(imageData.data.buffer);
-        // var alpha = (0xff << 24);
-        // var i = img_u8.cols*img_u8.rows, pix = 0;
-        // while(--i >= 0) {
-        //     pix = img_u8.data[i];
-        //     data_u32[i] = alpha | (pix << 16) | (pix << 8) | pix;
-        // }
         
         ctx.putImageData(imageData, 0, 0);
     },
