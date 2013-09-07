@@ -38,9 +38,8 @@
     <p id="info">Please allow access to your camera!</p>
     <canvas id="output"></canvas>
     <div id="publisher"></div>
-    <script src="js/cvision/ccv.js"></script>
-    <script src="js/cvision/face.js"></script>
-    <script src="js/cvision/profiler.js"></script>
+    <script src="js/profiler.js"></script>
+    <script src="js/dat.gui.min.js"></script>
     <script src="js/cvision/jsfeat/build/jsfeat-min.js"></script>
     <script>
 
@@ -107,7 +106,7 @@ var App = {
     drawGreyCanvas: function() {
 	requestAnimationFrame(App.drawGreyCanvas);
 
-	var video = App.video,
+	video = App.video,
 	ctx = App.context
 	var w = App.canvas.width;
 	var h = App.canvas.height;
@@ -123,16 +122,14 @@ var App = {
 	    corners[i] = new jsfeat.point2d_t(0,0,0,0);
 	}
 
-	threshold = 20;
-
-	jsfeat.fast_corners.set_threshold(threshold);
-
-
-
 	jsfeat.imgproc.grayscale(imageData.data, img_u8.data);
 
+	jsfeat.fast_corners.set_threshold(App.options.threshold|0);
+	var count = jsfeat.fast_corners.detect(img_u8, corners, 5);
 
-	
+	var data_u32 = new Uint32Array(imageData.data.buffer);
+	App.renderCorners(corners, count, data_u32, w);
+
 
 
 
@@ -145,6 +142,21 @@ var App = {
         // }
         
         ctx.putImageData(imageData, 0, 0);
+    },
+    renderCorners: function(corners, count, img, step) {
+
+        var pix = (0xff << 24) | (0x00 << 16) | (0xff << 8) | 0x00; //green
+        for(var i=0; i < count; ++i)
+        {
+            var x = corners[i].x;
+            var y = corners[i].y;
+            var off = (x + y * step);
+            img[off] = pix;
+            img[off-1] = pix;
+            img[off+1] = pix;
+            img[off-step] = pix;
+            img[off+step] = pix;
+        }
     }
 };
 
@@ -159,17 +171,22 @@ App.init = function() {
     App.context = App.canvas.getContext('2d');
     App.info = document.querySelector('#info');
 
-    App.stat = new profiler();
+    //App.stat = new profiler();
 
-
+    var demo_opt = function() {
+	this.threshold = 20;
+    }
+    App.options = new demo_opt();
+    App.gui = new dat.GUI();
+    App.gui.add(App.options, 'threshold', 5, 100).step(1);
 
     App.start();
 };
 
+// ----- TOKBOX CODE -----
 var apiKey = "40512712";
 var sessionId = "2_MX40MDUxMjcxMn4xMjcuMC4wLjF-RnJpIFNlcCAwNiAxOToxOTozMCBQRFQgMjAxM34wLjI4NDMzNTZ-";
 var token = "T1==cGFydG5lcl9pZD00MDUxMjcxMiZzZGtfdmVyc2lvbj10YnJ1YnktdGJyYi12MC45MS4yMDExLTAyLTE3JnNpZz1hZDFhNjcyOGZkMjY2ZTY4ZTY3MzIyN2NhMjI4ZTE5ODJhYjBjNWQ3OnJvbGU9cHVibGlzaGVyJnNlc3Npb25faWQ9Ml9NWDQwTURVeE1qY3hNbjR4TWpjdU1DNHdMakYtUm5KcElGTmxjQ0F3TmlBeE9Ub3hPVG96TUNCUVJGUWdNakF4TTM0d0xqSTRORE16TlRaLSZjcmVhdGVfdGltZT0xMzc4NTIwMzcxJm5vbmNlPTAuNDE1OTcwNDU3MDY4NDIxMyZleHBpcmVfdGltZT0xMzc4NjA2NzcxJmNvbm5lY3Rpb25fZGF0YT0=";
-
 var session = TB.initSession(sessionId);
 
 session.addEventListener('sessionConnected', function(e) {
@@ -190,6 +207,7 @@ session.addEventListener('streamCreated', function(e) {
 });
 
 session.connect(apiKey, token);
+
 </script>
     </body>
     </html>
