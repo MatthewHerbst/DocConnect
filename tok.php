@@ -1,15 +1,20 @@
 <?php
-include_once 'head.php';
-
 /** Methods for managing creation and handling of sessions/tokens for opentok 
 	connection. Layers between client-side javascript and web services. **/
+
+//The list of active session
+$sessionList = array();
+
+function getSessionList() {
+	return $sessionList;
+}
 
 // Creating an OpenTok Object
 $apiObj = new OpenTokSDK();
 
 //Create a new session (a session is like a chat room, with the password to the
 //room being the token)
-function createSession() {
+function createSession($users) {
 	$sessionId = $apiObj->createSession( $_SERVER["REMOTE_ADDR"] );
 	return $sessionId;
 }
