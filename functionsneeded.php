@@ -13,6 +13,7 @@ mysql_connect($dbhost, $dbuser, $dbpass) or die(mysql_error());
 
 mysql_select_db($dbname) or die(mysql_error());
 
+
 echo "<link href='styles.css' rel='stylesheet' type='text/css'>";
 
 function createTable($name, $query)
@@ -24,7 +25,7 @@ function createTable($name, $query)
 function makeQuery($query)
 {
     $result = mysql_query($query) or die(mysql_error());
-    return $result;
+	return $result;
 }
 
 function destroySession()

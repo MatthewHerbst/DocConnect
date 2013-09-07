@@ -10,28 +10,27 @@
 
 session_start();
 
-include_once 'functionsneeded.php';
+require_once 'functionsneeded.php';
 
+//tokbox SDK
 require_once 'tokbox/Opentok-PHP-SDK/OpenTokSDK.php';
 require_once 'tokbox/Opentok-PHP-SDK/OpenTokArchive.php';
 require_once 'tokbox/Opentok-PHP-SDK/OpenTokSession.php';
 
+//For video communication
+require_once 'tok.php';
+
 $userstr = 'Guest';
 
-if (isset($_SESSION['user']))
-{
+if(isset($_SESSION['user'])) {
 	$user = $_SESSION['user'];
 	$logInStatus = TRUE;
 	$userstr = "";
-}
-
-else
-{
+} else {
 	$logInStatus = FALSE;
 }
 
 echo "<title>$appname - $userstr</title>
 	<link rel = 'stylesheet' href = 'styles.css' type = 'text/css' />
 	</head><body><h1><div class = 'appname'>$appname - $userstr</div></h1>";
-
 ?>
