@@ -10,6 +10,7 @@ include_once 'head.php';
 	
 	<script type='text/javascript'>
 		var myDataRef = new Firebase('https://matthewherbst.firebaseIO.com/');
+		
 		$('#messageInput').keypress(function(e) {
 			if(e.keyCode == 13) {
 				var name = $('#nameInput').val();

@@ -19,9 +19,9 @@ echo "<link href='styles.css' rel='stylesheet' type='text/css'>";
 function createTable($name, $query)
 {
     makeQuery("CREATE TABLE IF NOT EXISTS $name($query)");
-    echo "Table '$name' created or already exists. <br />";
 }
 
+//TODO: this is insecure - write methods for stuff in future
 function makeQuery($query)
 {
     $result = mysql_query($query) or die(mysql_error());
