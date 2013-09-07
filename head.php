@@ -2,21 +2,11 @@
 <html lang='en'><head>
 <meta name='author' content=''>
 <meta charset='utf-8'>
-<script type='text/javascript' src='https://cdn.firebase.com/v0/firebase.js'></script>
-<script src='https://swww.tokbox.com/webrtc/v2.0/js/TB.min.js' type='text/javascript'></script>
-<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
-<link rel='stylesheet' type='text/css' href='styles.css' media='screen' />
+<script type='text/javascript' src='js/firebase/firebase.js'></script>
+<script type='text/javascript' src='js/firebase/idle.js'></script>
+<script type='text/javascript' src='js/tokbox/TB.min.js'></script>
+<script type='text/javascript' src='js/jquery/jquery-1.10.2.min.js'></script>
 
-      <div class="masthead">
-        <h3 class="text-muted">Project name</h3>
-        <ul class="nav nav-justified">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">Demo</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
 <?php
 session_start();
 
@@ -45,11 +35,26 @@ if(isset($_SESSION['user'])) {
 }
 
 
-echo "<title>$appname - $userstr</title>
+echo "<title>MedConnect - $userstr</title>
 	<link rel = 'stylesheet' href = 'styles.css' type = 'text/css' />
 	</head><body>
-	<img src='logo.png' height='100px'>
-	<h1><div class = 'appname'>$appname - $userstr</div></h1>";
+	<div id='header'><img src='logo.png' height='100px'>
+        </div>
+<div>
+	  <form class='navbar-form navbar-right'>
+            <div class='form-group'>
+              <input type='text' placeholder='Search' name='fields' class='form-control'>
+            </div>
+            <button type='submit' class='btn btn-success'>Search</button>
+          </form>
+</div>
 
-
+      <div class='masthead'>
+        <ul class='nav nav-justified'>
+          <li class='active'><a href='index.php'>Home</a></li>
+          <li><a href='about.php'>About</a></li>
+          <li><a href='leaderboard.php'>Leaderboard</a></li>
+	  <li><a href='logout.php'>You are logged in as $userstr. Logout?</a></li>
+        </ul>
+      </div>";
 ?>
