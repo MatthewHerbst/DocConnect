@@ -97,17 +97,15 @@
 	setAwayTimeout(300000); //5 minutes
 </script>
 
-  <div class='container'>
-<body align='center'>
-  <div class='container' align='center'>
+<div class='container'>
+	<div class='container' align='center'>
     <div class='cam'>
-      <div class='doctor'>
-	<div class='maincam' id='maincam'>
-	  <img src='pic1.jpg' width='100%'>
-	</div>
-      </div>
-      
-      <div class='doctor'>
+		<div class='doctor'>
+			<div class='maincam' id='maincam'>
+				<img src='pic1.jpg' width='100%'>
+			</div>
+		</div>
+    <div class='doctor'>
 	<div class='smallcam' id='smallcam' onclick='changeCams("maincam", "smallcam")'>
 	  <img src='pic2.jpg' width='100%'> <!--100% of the div, which is 45% of box-->
 	</div>
