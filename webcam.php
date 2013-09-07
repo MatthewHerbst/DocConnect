@@ -23,6 +23,29 @@
 </head>
 
 <body>
+	<script type='text/javascript'>
+		var name = '<?php $_SESSION['user']?>';
+		var currentStatus = 'online';
+		
+		//Reference to Firebase db
+		var presenceRef = new Firebase('https://docconnect.firebaseio.com/presence');
+		
+		//Save a reference to myself
+		var myUserRef = presenceRef.push();
+		
+		//Get a reference to my own presence status
+		var connectedRef = new Firebase('https://docconnect.firebaseio.com/.info/connected');
+		connectedRef.on('value', function(isOnline) {
+			if(isOnline.val()) {
+				//Remove ourself from the list if we lose internet connection
+				myUserRef.onDisconnect().remove();
+				
+				//Set the initial online status (for next time we come online)
+				setUserStatus(online);
+			} else {
+			}
+	</script>
+
   <div class='container'>
     <div class='cam'>
       <div class='doctor'>
