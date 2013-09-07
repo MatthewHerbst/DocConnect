@@ -32,12 +32,13 @@ function radioButtonClicked()
 	{
 		console.log("yes button checked");
 		var stringToInsert = "<div id = 'doctorinput'>"+
-							"<span class = 'fieldname'>Education/Medical University</span>"+
-							"<input type = 'text' maxlength = '30' name = 'education' /><br />"+
-							"<span class = 'fieldname'>Hospital/Medical Institution</span>"+
-							"<input type = 'text' maxlength = '30' name = 'hospital' /><br />"+
+							"<table><tr><td><span class = 'fieldname'>Education/Medical University</span></td>"+
+							"<td><input type = 'text' maxlength = '30' name = 'education' /></td></tr>"+
+							"<tr><td><span class = 'fieldname'>Hospital/Medical Institution</span></td>"+
+							"<td><input type = 'text' maxlength = '30' name = 'hospital' /></td></tr>"+
 							"<span class = 'fieldname'>Specialty</span><select name = 'specialty' id='specialty'>"+
-							"<option value = 'none' id = 'defaultspecialty'>Please Select your specialty</option>";	
+       	       					   	"<option value = 'none' id = 'defaultspecialty'>Please Select your Specialty</option>";
+
 		doctorInputBoxesAdded = true;
 		$(stringToInsert).insertBefore("#submitbutton");
 		var numOfSpecialties = specialtiesNames.length;	
@@ -66,7 +67,7 @@ function checkInput()
 	if($("input").val() == "" || !radioButtonsClicked
 		|| !dateFilled)
 	{
-		alert ("Please Fill in All parts of form");
+		alert ("Please fill in all parts of form");
 		return false;
 	}
 	
@@ -84,29 +85,59 @@ if($logInStatus)
 }
 
 echo <<<_END
+<div class='form' align='center'>
 <form method = 'post' action = 'saveAccount.php' 
 onsubmit='return checkInput();'>
-<span class = 'fieldname'>First Name</span>
-<input type = 'text' maxlength = '20' name = 'firstname' /><br />
-<span class = 'fieldname'>Last Name</span>
-<input type = 'text' maxlength = '20' name = 'lastname' /><br />
-<span class = 'fieldname'>Username</span>
-<input type = 'text' maxlength = '16' name = 'username' /><br />
-<span class = 'fieldname'>Password</span>
-<input type = 'password' maxlength '16' name = 'password' /><br />
-<span class = 'fieldname'>Email Address</span>
-<input type = 'text' maxlength = '30' name = 'email' /><br />
-<span class = 'fieldname'>Date of Birth</span>
-<input type = 'date' id = 'DOB' name = 'DOB' /><br />
-<span class = 'fieldname'>Are you a Doctor?</span><br />
-<input type = 'radio' class = 'radio' 
-id = 'yesbutton' name = 'doctorStatus' 
-value = 'yes' onchange = 'radioButtonClicked()' />Yes<br />
-<input type = 'radio' class = 'radio' id = 'nobutton' 
-name = 'doctorStatus' value = 'no'
-onchange = 'radioButtonClicked()' />No<br />
-<input type = 'submit' id = 'submitbutton' value = 'Sign Up' />
-</form></div></body></html>
+
+ <table>
+      <tr>
+      <td><span class = 'fieldname'>First Name</span></td>
+      <td><input type = 'text' maxlength = '20' name = 'firstname' /></td>
+      </tr>
+      <tr>
+      <td><span class = 'fieldname'>Last Name</span></td>
+      <td><input type = 'text' maxlength = '20' name = 'lastname' /></td>
+      </tr>
+      <tr>
+      <td><span class = 'fieldname'>Username</span></td>
+      <td><input type = 'text' maxlength = '16' name = 'username' /></td>
+      </tr>
+      <tr>
+      <td><span class = 'fieldname'>Password</span></td>
+      <td><input type = 'password' maxlength '16' name = 'password' /></td>
+      </tr>
+      <tr>
+      <td><span class = 'fieldname'>Password (retype)</span></td>
+      <td><input type = 'password' maxlength '16' name = 'password2' /></td>
+      </tr>
+      <tr>
+      <td><span class = 'fieldname'>Email Address</span></td>
+      <td><input type = 'text' maxlength = '30' name = 'email' /></td>
+      </tr>
+      <tr>
+      <td><span class = 'fieldname'>Date of Birth</span></td>
+      <td><input type = 'date' id = 'DOB' name = 'DOB' /></td>
+      </tr>
+</td>
+</tr>
+</table>
+      <tr>
+      <td><span class = 'fieldname'>Are you a Doctor?</span></td>
+      <td><input type = 'radio' class = 'radio' 
+      id = 'yesbutton' name = 'doctorStatus' 
+      value = 'yes' onchange = 'radioButtonClicked()' />Yes
+      <input type = 'radio' class = 'radio' id = 'nobutton' 
+      name = 'doctorStatus' value = 'no'
+      onchange = 'radioButtonClicked()' />No<br />
+      </td>
+      </tr>
+
+      <tr>
+      <td><input type = 'submit' id = 'submitbutton' value = 'Sign Up' /></td>
+      </tr>
+  </form>
+
+</div></div></body></html>
 
 _END
 ?>
