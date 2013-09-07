@@ -9,13 +9,14 @@ include_once 'functionsneeded.php';
 
 
 $membersTableFields = "username VARCHAR(28), password VARCHAR(128),".
-					"D.O.B. VARCHAR(28), email VARCHAR(28), ".
+					"firstname VARCHAR(28), lastname VARCHAR(28), ".
+					"DOB VARCHAR(28), email VARCHAR(28), ".
 					"doctorStatus BOOL, UNIQUE INDEX(username)";
-createTable('members', $membersTableField);
+createTable('members', $membersTableFields);
 
 
 $doctorsTableFields = "username VARCHAR(28), hospital VARCHAR(28),".
-						"specialty VARCHAR(28)";
+						"specialty VARCHAR(28), education VARCHAR(30)";
 createTable('doctors', $doctorsTableFields);
 
 
