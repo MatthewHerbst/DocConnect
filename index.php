@@ -1,12 +1,12 @@
-<?
+<?php
 include_once 'head.php';
-echo "test";
+echo 'test';
 ?>
 	<div id='messagesDiv'></div>
 	<input type='text' id='nameInput' placeholder='Name'>
     <input type='text' id='messageInput' placeholder='Message'>
 	
-	<div id="myPublisherDiv"></div>
+	<div id='myPublisherDiv'></div>
 	
 	
 	<script type='text/javascript'>
