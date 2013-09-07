@@ -108,9 +108,29 @@ var App = {
 	requestAnimationFrame(App.drawGreyCanvas);
 
 	var video = App.video,
-	ctx = App.context
+	//video.play();
 
-	ctx.drawImage(video, 0, 0, App.canvas.width, App.canvas.height);
+	img_u8 = new jsfeat.matrix_t(App.video.videoWidth, App.video.videoHeight, jsfeat.U8_t | jsfeat.C1_t);
+
+	ctx = App.context
+	var w = App.canvas.width;
+	var h = App.canvas.height;
+
+	ctx.drawImage(video, 0, 0, w, h);
+	var imageData = ctx.getImageData(0, 0, w, h);
+	
+	jsfeat.imgproc.grayscale(imageData.data, img_u8.data);
+
+	var data_u32 = new Uint32Array(imageData.data.buffer);
+        var alpha = (0xff << 24);
+        var i = img_u8.cols*img_u8.rows, pix = 0;
+        while(--i >= 0) {
+            pix = img_u8.data[i];
+            data_u32[i] = alpha | (pix << 16) | (pix << 8) | pix;
+        }
+        
+        ctx.putImageData(imageData, 0, 0);
+
 
     }
 /*
@@ -159,6 +179,8 @@ App.init = function() {
     App.info = document.querySelector('#info');
 
     App.stat = new profiler();
+
+
 
     App.start();
 };
