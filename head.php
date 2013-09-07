@@ -38,5 +38,5 @@ echo "<title>$appname - $userstr</title>
 	<link rel = 'stylesheet' href = 'styles.css' type = 'text/css' />
 	</head><body><h1><div class = 'appname'>$appname - $userstr</div></h1>";
 
-
+?>
 

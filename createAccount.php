@@ -1,9 +1,14 @@
+<?
+include_once 'head.php';
+?>
+
+
 <script>
 
 
 var radioButtonsClicked = false;
 
-$("input:radio").click()
+$("input:radio").click(radioButtonClicked());
 
 function radioButtonClicked()
 {
@@ -14,13 +19,17 @@ function radioButtonClicked()
 	}
 	else if ($(this).val() == 'yes')
 	{
-		var stringToInsert = "<span class = >"	
+		var stringToInsert = "<span class = 'fieldname'>Education/Medical University</span>"+
+								"<input type = 'text' maxlength = '30' /><br />"+
+							"<span class = 'fieldname'>Hospital/Medical Institution</span>"+
+							"input type = 'text' maxlenght = '30' /><br />";	
+		$(stringToInsert).insertBefore("input:submit");
 	}
 }
 function checkInput()
 {
 	console.log("I get here");
-	if($("input").val() == "")
+	if($("input").val() == "" || !radioButtonsClicked)
 	{
 		alert ("Please Fill in All parts of form");
 		return false;
@@ -31,7 +40,6 @@ function checkInput()
 </script>
 
 <?
-include_once 'head.php';
 
 if($logInStatus)
 {
