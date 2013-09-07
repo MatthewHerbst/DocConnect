@@ -17,52 +17,49 @@
    c3 = document.getElementById(cam1).innerHTML;
    document.getElementById(cam1).innerHTML = document.getElementById(cam2).innerHTML;
    document.getElementById(cam2).innerHTML = c3;
-
-   javascript: console.log('meh');
   }  
-
-
-  function parttwo(text1){
-   var a = text1;
-  console.log("in part 2" + a);
-  }
 </script>
 
 </head>
 
 <body>
 <div class='container' align='center'>
-<div class='doctor'>
-  <div class='webcam' id='maincam'>
-    <h1>Me (Doctor)</h1>
-    <img src='pic1.jpg' height='300px' width='400px'>
-  </div>
-  <div class='info' align='left';>
+<div class='doctor' id='maincam'>
+  <div class='webcam'>
+    <img src='pic1.jpg' width='100%'>
     <ul>
       <li>Name:</li>
       <li>Location:</li>
       <li>Specialist:</li>
       <li>Local Time:</li>
     </ul>
-    </p>	     
   </div>
+  <!--div class='info' align='left'>
+    <ul>
+      <li>Name:</li>
+      <li>Location:</li>
+      <li>Specialist:</li>
+      <li>Local Time:</li>
+    </ul>
+  </div-->
 </div>
 
 <div class='doctor'>
+  <div class='smallcam' id='smallcam'>
+    <img src='pic2.jpg' width='50%'>
+  </div><!--webcam-->
 
-  <div class='webcam' id='smallcam'>
-    <h1>Doctor Bob</h1>
-    <img src='pic2.jpg' height='300px' width='400px'>
-  </div><!--webscreen-->
-  <div class='info' align='left';>
-    <ul>
-      <li>Name:</li>
-      <li>Location:</li>
-      <li>Specialist:</li>
-      <li>Local Time:</li>
-    </ul>
-    </p>	     
-  </div>
+  <div class='smallcam' id='smallcam2'>
+    <img src='pic2.jpg' width='50%'>
+  </div><!--webcam-->
+
+  <div class='smallcam' id='smallcam3'>
+    <img src='pic2.jpg' width='50%'>
+  </div><!--webcam-->
+
+  <div class='smallcam' id='smallcam4'>
+    <img src='pic2.jpg' width='50%'>
+  </div><!--webcam-->
 </div><!--doctor-->
 
 <div class='button'>

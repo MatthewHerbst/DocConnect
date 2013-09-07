@@ -21,15 +21,38 @@ height:70%;
 
 div.doctor{
 display:inline-block;
+padding:2px;
+width:50%;
+float:left;
+}
+
+div.scroll{
+border-style: solid;
+border-width: 2px;
+border-color: #001200;
+border-radius: 5px;
 padding:20px;
 }
+
 
 div.webcam{
 border-style: solid;
 border-width: 2px;
 border-color: #001200;
 border-radius: 5px;
+display:inline-block;
 }
+
+div.smallcam{
+/*border-style: solid;
+border-width: 2px;
+border-color: #001200;
+border-radius: 5px;*/
+display:inline-block;
+float:left;
+}
+
+
 #maincam{
 }
 #smallcam{
