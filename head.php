@@ -72,7 +72,7 @@ echo "<title>$appname - $userstr</title>
 
 
 
-if (!$logInStatus)
+if (!$logInStatus && !(($_GET['create']== 'yes')||($_GET['save']=='yes')))
 {
 	echo <<<_END
 	<h2>Please Login to Access Page</h2><br />
@@ -84,7 +84,7 @@ if (!$logInStatus)
 	<br />
 	<span class = 'fieldname'></span>
 	<input type = 'submit' value = 'Login' /><br />
-	<a href = createAccount.php>Or Sign Up Here!</a>
+	<a href = createAccount.php?create=yes>Or Sign Up Here!</a>
 	</form><br /></div>
 _END;
 	die();

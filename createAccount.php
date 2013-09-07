@@ -84,7 +84,7 @@ if($logInStatus)
 }
 
 echo <<<_END
-<form method = 'post' action = 'saveAccount.php' 
+<form method = 'post' action = 'saveAccount.php?save=yes' 
 onsubmit='return checkInput();'>
 <span class = 'fieldname'>First Name</span>
 <input type = 'text' maxlength = '20' name = 'firstname' /><br />
