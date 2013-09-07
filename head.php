@@ -4,7 +4,7 @@
 <meta charset='utf-8'>
 <title></title>
 <script type='text/javascript' src='https://cdn.firebase.com/v0/firebase.js'></script>
-<script src='https://swww.tokbox.com/webrtc/v2.0/js/TB.min.js'></script>
+<script src='http://static.opentok.com/webrtc/v2.0/js/TB.min.js'></script>
 <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
 
 
