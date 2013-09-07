@@ -27,13 +27,27 @@ if(isset($_SESSION['user'])) {
 	$user = $_SESSION['user'];
 	$logInStatus = TRUE;
 	$userstr = "";
-} else {
+} else 
+{
 	$logInStatus = FALSE;
 }
+
 
 echo "<title>$appname - $userstr</title>
 	<link rel = 'stylesheet' href = 'styles.css' type = 'text/css' />
 	</head><body>
 	<img src='logo.png' height='100px'>
 	<h1><div class = 'appname'>$appname - $userstr</div></h1>";
+?>
+	</head><body><h1><div class = 'appname'>$appname - $userstr</div></h1>";
+
+if (!$logInStatus)
+{
+	echo <<<_END
+	<form class = 'loginform' method = 'post' action = 'verify.php'>
+
+
+_END;
+}
+
 ?>
