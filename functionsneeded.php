@@ -1,17 +1,29 @@
 <script src='js/jquery/jquery-1.10.2.min.js'></script>
 
 <?php
+$url = "mysql://b210a37bc0803d:b0f2505e@us-cdbr-east-04.cleardb.com/".
+		"heroku_ed2de3a9c341196?reconnect=true";
 
+$url = parse_url(getenv($url))
 
-$dbhost = 'localhost';
-$dbname = 'docconnect';
-$dbuser = 'root';
-$dbpass = '';
+$server = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"],1);
+
+mysql_connect($server, $username, $password);
+
+mysql_select_db($db);
+
+/*$dbhost = 'localhost';
+$dbname = substr($url['heroku_ed2de3a9c341196'], 1);
+$dbuser = $url['b210a37bc0803d'];
+$dbpass = $url['b0f2505e'];
 $appname = "Doc Connect";
 
 mysql_connect($dbhost, $dbuser, $dbpass) or die(mysql_error());
 
-mysql_select_db($dbname) or die(mysql_error());
+mysql_select_db($dbname) or die(mysql_error());*/
 
 
 echo "<link href='styles.css' rel='stylesheet' type='text/css'>";
@@ -56,7 +68,7 @@ function showProfile($user)
         echo "<img src = 'profilePhotos/$user.jpg' align = 'left' />";
     }
 
-    $result = makeQuery("SELECT * FROM profiles WHERE user = '$user'");
+    $result = makeQuery("SELECT * FROM doctorProfiles WHERE username = '$user'");
 
     if (mysql_num_rows($result))
     {

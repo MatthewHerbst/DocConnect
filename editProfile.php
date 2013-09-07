@@ -9,6 +9,8 @@ include_once 'login.php';
 
 echo "<div class = 'main'><h3>Your Profile</h3>";
 
+$somethingChanged = false;
+
 if(isset($_POST['text']))
 {
     $text = sanitizeString($_POST['text']);
@@ -24,9 +26,10 @@ if(isset($_POST['text']))
     {
         makeQuery("INSERT INTO doctorProfiles VALUES ('$user', '$text', '0')");
     }
+	$somethingChanged = true;
 }
 
-$result = makeQuery("SELECT * FROM doctorProfiles WHERE user = '$user'");
+$result = makeQuery("SELECT * FROM doctorProfiles WHERE username= '$user'");
 if(mysql_num_rows($result))
 {
     $row = mysql_fetch_row($result);
@@ -87,12 +90,19 @@ else
             imagejpeg($tmpImage, $saveAs);
             imagedestroy($tmpImage);
             imageDestroy($src);
+			$somethingChanged = true;
         }
     }
 
-    showProfile($user);
+	if ($somethingChanged)
+	{
+		echo "<span class='successfulUpdate'>You have Successfully Updated".
+			"your Profile, To view it, click ".
+			"<a href = 'viewProfile.php?userToDisplay=$user'>here</a>";
+	}
+
     echo <<<_END
-    <form method='post' action='profile.php' enctype='multipart/form-data'>
+    <form method='post' action='editProfile.php' enctype='multipart/form-data'>
     <h3>Enter or Edit Your Profile Details</h3>
     <span class='desrciption'>Your Bio</span><br />
     <textarea name='text' cols='50' rows='3'>$textOutput</textarea><br />
