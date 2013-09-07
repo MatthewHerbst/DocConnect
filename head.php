@@ -12,7 +12,7 @@ if (isset($_SESSION['user']))
 {
 	$user = $_SESSION['user'];
 	$logInStatus = TRUE;
-	$userstr = ""
+	$userstr = "";
 }
 
 else
@@ -20,9 +20,9 @@ else
 	$logInStatus = FALSE;
 }
 
-echo "<title>$appname.'-'.$userstr</title>
+echo "<title>$appname - $userstr</title>
 	<link rel = 'stylesheet' href = 'styles.css' type = 'text/css' />
-	</head><body><h1><div class = 'appname'>$appname.'-'.$userstr</div></h1>";
+	</head><body><h1><div class = 'appname'>$appname - $userstr</div></h1>";
 
 
 

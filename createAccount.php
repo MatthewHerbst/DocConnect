@@ -1,3 +1,16 @@
+<script>
+
+function checkInput()
+{
+	if($("input").val() == "")
+	{
+		alert ("Please Fill in All parts of form");
+		return false;
+	}
+}
+
+</script>
+
 <?
 include_once 'head.php';
 
@@ -9,7 +22,8 @@ if($logInStatus)
 }
 
 echo <<<_END
-<form method = 'post' action = 'saveAccount.php'>
+<form method = 'post' action = 'saveAccount.php' 
+onsubmit='return checkInput();'>
 <span class = 'fieldname'>First Name</span>
 <input type = 'text' maxlength = '20' name = 'firstname' /><br />
 <span class = 'fieldname'>Last Name</span>
