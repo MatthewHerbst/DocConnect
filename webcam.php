@@ -5,17 +5,18 @@
 
 <script>
   function changeCams(cam1, cam2){
- //   var c1 = document.getElementById(cam1);
-//    var c2 = document.getElementById(cam2);
-  //  var temp = document.getElementById(cam2);
-      console.log(document.getElementById(cam1)+"hh");
-//    c1.innerHTML = c2;
- //   c2.innerHTML = document.getElementById(cam1);
+   var c1 = document.getElementById(cam1); //Gets the entire div
+   var c2 = document.getElementById(cam2); //Gets the entire div
+   console.log(c1);
+   console.log(c2);
+   console.log(cam1);
+   console.log(cam2);
 
-//  document.getElementById(cam1).innerHTML= document.getElementById(cam2);
-  //    console.log(document.getElementById(cam1));
 
-   //   console.log(c1 + c2);  
+   
+   c1.innerHTML = c2;
+   console.log(c1);
+   console.log(document.getElementById(cam1));
   
 /*    for (i in elems){
 
