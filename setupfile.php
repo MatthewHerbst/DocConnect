@@ -38,4 +38,4 @@ $favoritesTableFields = "username VARCHAR(28), favoritedUser VARCHAR(28)"
 createTable ('favorites', $favoritedTableFields);
 
 echo "Table setup complete!!";
-?>
+?r
