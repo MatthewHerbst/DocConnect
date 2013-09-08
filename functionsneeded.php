@@ -1,7 +1,9 @@
 <script src='js/jquery/jquery-1.10.2.min.js'></script>
 
 <?php
-$url = "mysql://b210a37bc0803d:b0f2505e@us-cdbr-east-04.cleardb.com/".
+
+
+/*$url = "mysql://b210a37bc0803d:b0f2505e@us-cdbr-east-04.cleardb.com/".
 		"heroku_ed2de3a9c341196?reconnect=true";
 
 $url = parse_url(getenv($url))
@@ -13,17 +15,17 @@ $db = substr($url["path"],1);
 
 mysql_connect($server, $username, $password);
 
-mysql_select_db($db);
+mysql_select_db($db);*/
 
-/*$dbhost = 'localhost';
-$dbname = substr($url['heroku_ed2de3a9c341196'], 1);
-$dbuser = $url['b210a37bc0803d'];
-$dbpass = $url['b0f2505e'];
+$dbhost = 'localhost';
+$dbname = 'docconnect';
+$dbuser = 'root';
+$dbpass = '';
 $appname = "Doc Connect";
 
 mysql_connect($dbhost, $dbuser, $dbpass) or die(mysql_error());
 
-mysql_select_db($dbname) or die(mysql_error());*/
+mysql_select_db($dbname) or die(mysql_error());
 
 
 echo "<link href='styles.css' rel='stylesheet' type='text/css'>";
@@ -69,12 +71,22 @@ function showProfile($user)
     }
 
     $result = makeQuery("SELECT * FROM doctorProfiles WHERE username = '$user'");
-
-    if (mysql_num_rows($result))
+	$userReviewTable = $user."Reviews";
+   $resultReviews = makeQuery("SELECT * FROM $userReviewTable");
+	 if (mysql_num_rows($result))
     {
         $row = mysql_fetch_row($result);
-        echo stripslashes($row[1]) . "<br clear='left' /> <br/>";
+        echo stripslashes($row[1]) . "<br clear='left' /> <br/>".
+			stripslashes($row[2]);
     }
+	$numReviews = mysql_num_rows($resultReviews);
+	echo "<h3>This Doctor's Reviews</h3><br />";
+	while($numReviews > 0)
+	{
+		$reviewRow = mysql_fetch_assoc($resultReviews);
+		echo $reviewRow['rating']."       ".$reviewRow['reviewText'];
+		--$numReviews;
+	}
 
 }
 
