@@ -26,6 +26,7 @@ $numInfoRows = mysql_num_rows($docInfoResult);
 echo "<ul class='searchResults'>";
 while($numNameRows > 0)
 {
+	echo "I get here";
 	$nameRow = mysql_fetch_assoc($nameResult);
 	$userName = $nameRow['username'];
 	echo "<li class='doctorListing'>Dr. ".$nameRow['firstname']." ".$nameRow['lastname'].
