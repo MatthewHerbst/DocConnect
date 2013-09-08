@@ -102,6 +102,7 @@ else
 	}
 
     echo <<<_END
+
     <div class='sixty' align='center'><div style='width:30%;'>
     <form method='post' action='editProfile.php' enctype='multipart/form-data'>
     <h4>Enter or Edit Your Profile Details</h4>
