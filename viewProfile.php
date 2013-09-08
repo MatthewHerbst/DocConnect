@@ -28,7 +28,7 @@ if($userToDisplay != $user)
 	}
 	else
 	{
-		echo "<h3><a href='addToFavorites.php?userToAdd=$userToDislay'>
+		echo "<h3><a href='addToFavorites.php?userToAdd=$userToDisplay'>
 		Add this Doctor to your Favorites</a></h3><br />";	
 	}	
 }
