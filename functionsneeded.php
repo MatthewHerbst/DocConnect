@@ -73,7 +73,7 @@ function showProfile($user)
 	while($numReviews > 0)
 	{
 		$reviewRow = mysql_fetch_assoc($resultReviews);
-		echo "<tr><td>".$reviewRow['rating']."</td><td>".$reviewRow['reviewText']."</td></tr>";
+		echo "<tr><td>".$reviewRow['rating']."</td><td>".$reviewRow['review']."</td></tr>";
 		--$numReviews;
 	}
 	if($numReviewsStart > 0)

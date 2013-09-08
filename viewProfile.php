@@ -2,16 +2,17 @@
 include_once 'head.php';
 include_once 'login.php';
 
+if(isset($_GET['userToDisplay']))
+{
+    $userToDisplay = $_GET['userToDisplay'];
+}
+
 if(isset($_POST['reviewText']) && $_POST['rating'])
 {
 	$reviewText = $_POST['reviewText'];
 	$rating = $_POST['rating'];
 	makeQuery("INSERT INTO reviews VALUES('$user', '$rating', '$reviewText')");
-	header("location: viewProfile.php");
-}
-if(isset($_GET['userToDisplay']))
-{
-	$userToDisplay = $_GET['userToDisplay']; 
+	header("location: viewProfile.php?userToDisplay=$userToDisplay");
 }
 
 
