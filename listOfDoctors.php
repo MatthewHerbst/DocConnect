@@ -13,7 +13,7 @@ for($i = 0; $i < $numDoctors; ++$i)
 	$doctorUN = $doctorRow['username'];
 	echo "<li>$doctorUN"."    ".
 	"<a href = 'viewProfile?userToDisplay=$doctorUN'>View Their Profile".
-	"</a></li?";
+	"</a></li>";
 }
 
 echo "<ul></div>";
