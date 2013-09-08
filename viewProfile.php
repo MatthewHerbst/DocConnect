@@ -1,4 +1,4 @@
-<?
+<?php
 include_once 'head.php';
 include_once 'login.php';
 
@@ -17,25 +17,24 @@ if(isset($_GET['userToDisplay']))
 }
 
 
-showProfile($userToDisplay);
+//showProfile($userToDisplay);
 
 echo <<<_END
 
-<h3>Have you worked with this doctor? Leave a Review</h3>
-<form method = 'post' action = 'viewProfile.php?userToDisplay=$userToDisplay'
-<span class='fieldname'>Rating(1-5)</span>
-<select name = 'rating'>
-<option value='0'>0</option>
-<option value='1'>1</option>
-<option value='2'>2</option>
-<option value='3'>3</option>
-<option value='4'>4</option>
-<option value='5'>5</option>
-</select><br />
+<h3>Have you worked with this doctor? Leave a Review!</h3>
+<form method = 'post' action = 'viewProfile.php?userToDisplay=$userToDisplay'>
+<span style='font-size:1.4em'>Rating: Low </span>
+<input type="radio" value="1">&nbsp&nbsp1&nbsp</input>
+<input type="radio" value="2">&nbsp&nbsp2&nbsp</input>
+<input type="radio" value="3">&nbsp&nbsp3&nbsp</input>
+<input type="radio" value="4">&nbsp&nbsp4&nbsp</input>
+<input type="radio" value="5">&nbsp&nbsp5&nbsp</input>
+<span style='font-size:1.4em'> High</span>
+<br /><br />
 <textarea name='reviewText' cols='50' rows='4' placeholder='Enter Written Review here'>
 </textarea>
 
-<input type = 'submit' value = 'Submit Review' />
+<input class='btn btn-success' type = 'submit' value = 'Submit Review' />
 
 
 

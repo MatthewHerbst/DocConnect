@@ -173,6 +173,7 @@ body {
   font-weight: none;
   font-size: 3em;
   font-variant: small-caps;
+
   text-align: center;
   border-bottom: 1px solid #d5d5d5;
   background-color: #e5e5e5; /* Old browsers */
@@ -4532,7 +4533,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     margin-bottom: 0;
     vertical-align: middle;
   }
-  .navbar-form .form-control {
+  .navbar-form .form-control
     display: inline-block;
   }
   .navbar-form .radio,
