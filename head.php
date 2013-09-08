@@ -9,6 +9,7 @@
 	<script type='text/javascript' src='js/jquery/jquery-1.10.2.min.js'></script>
 	<link rel='stylesheet' href='styles/bootstrap/bootstrap.css' type='text/css'/>
 	<link rel='stylesheet' href='styles/styles.css' type='text/css'/>
+	<link rel="icon" type="image/png" href="img/favicon.png">
 <?php
 
 
