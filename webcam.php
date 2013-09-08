@@ -27,7 +27,6 @@
 			</div>
 		</div>
 	</div>
-	<div id='onlineList'></div>
 	<div class='doctorInfo' align='left'>
 		<h1>About Dr. Kofman</h1>
 		<ul>
