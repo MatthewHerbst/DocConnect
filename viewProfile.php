@@ -38,11 +38,13 @@ echo <<<_END
 <BR><BR>
 <input class='btn btn-success' type = 'submit' value = 'Submit Review' />
 </div></div>
-}
+
 
 _END;
 
+}
 include_once 'footer.php';
+
 ?>
 
 
