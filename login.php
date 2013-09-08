@@ -38,17 +38,15 @@ if (isset($_POST['enteredUsername']) && !$logInStatus)
 if (!$logInStatus)
 {
     echo <<<_END
-    <h2>Please Login to Access Page</h2><br />
+    <div style='width:30%' align='center'><h2>Please Login to Access Page</h2>
     <form class = 'loginform' method = 'post' action = 'index.php'>$error
-    <span class = 'fieldname'>Username</span>
-    <input class = 'loginbox' type = 'text' maxlength = '16' name = 'enteredUsername' value = '$enteredUsername' /><br />
-    <span class = 'fieldname'>Password</span>
-    <input class = 'loginbox' type = 'password' maxlength = '16' name = 'enteredPass' value = '$enteredPass' /><br />
+    <input class='form-control' placeholder='Username' type = 'text' maxlength = '16' name = 'enteredUsername' value = '$enteredUsername' /><br />
+    <input class = 'form-control' placeholder='Password' type = 'password' maxlength = '16' name = 'enteredPass' value = '$enteredPass' /><br />
     <br />
     <span class = 'fieldname'></span>
-    <input type = 'submit' value = 'Login' /><br />
-    <a href = createAccount.php>Or Sign Up Here!</a>
-    </form><br /></div>
+    <input type = 'submit' class='btn btn-success' value = 'Login' />
+    <button class='btn btn-success'><a style='color:#FFFFFF; text-decoration:none;' href = 'createAccount.php'>Or Sign Up Here!</a></button>
+    </form></div></div>
 _END;
     die();
 }
