@@ -38,7 +38,7 @@ if (!$logInStatus)
 {
     echo <<<_END
     <div class='sixty' align='center'><h2>Please Login to Access Page</h2>
-    <div style='width:50%;'>
+    <div style='width:30%;'>
     <form class = 'loginform' method = 'post' action = 'index.php'>$error
     <input class='form-control' placeholder='Username' type = 'text' maxlength = '16' name = 'enteredUsername' value = '$enteredUsername' /><br />
     <input class = 'form-control' placeholder='Password' type = 'password' maxlength = '16' name = 'enteredPass' value = '$enteredPass' /><br />
