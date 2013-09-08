@@ -52,7 +52,7 @@ echo "<title>MedConnect - $userstr</title>
           <li class='active'><a href='index.php'>Home</a></li>
           <li><a href='about.php'>About</a></li>
           <li><a href='leaderboard.php'>Leaderboard</a></li>
-	  <li><a href='logout.php'>You are logged in as $userstr. Logout?</a></li>
+	  <li style='font-size: 1em;'><a href='logout.php'>$userstr. Logout?</a></li>
         </ul>
       </div>";
 ?>

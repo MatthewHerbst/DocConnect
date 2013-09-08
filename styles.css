@@ -167,10 +167,12 @@ body {
   
 }
 .nav-justified > li > a {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   color: #101852;
-  font-weight: bold;
+  font-weight: none;
+  font-size: 3em;
+  font-variant: small-caps;
   text-align: center;
   border-bottom: 1px solid #d5d5d5;
   background-color: #e5e5e5; /* Old browsers */
