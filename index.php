@@ -29,8 +29,15 @@ include_once 'login.php';
 
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
           <div class="well sidebar-nav">
-			<p><b>Who's online...</b></p>
-			<div id='onlineList'></div>
+			<?php
+				if($logInStatus) {
+					echo
+					"<p><b>Who's online...</b></p>
+					<div id='onlineList'></div>";
+				} else {
+					echo "<p><b>Login to see who's online</b></p>";
+				}
+			?>
 			<hr>
 			<p><b>Chat with others!!!</b></p>
 			<div id='messagesDiv'></div>

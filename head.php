@@ -79,25 +79,28 @@ echo
 				echo "<li><a href='#about'>About</a></li>";
             }
 			echo
-			"<li><a href='#contact'>Contact</a></li>
-			<li class='dropdown'>
-				<a href='#' class='dropdown-toggle' data-toggle='dropdown'>My MedConnect<b class='caret'></b></a>
-				<ul class='dropdown-menu'>
-					<li><a href='#'>Manage Favorites</a></li>
-					<li><a href='#'>View History</a></li>
-					<li class='divider'></li>
-					<li><a href='#'>Edit My Profile</a></li>
-					<li><a href='#'>Settings</a></li>
-				</ul>	
-			</li>
-          </ul>
+			"<li><a href='#contact'>Contact</a></li>";
+			if($logInStatus) {
+				echo "<li class='dropdown'>
+					<a href='#' class='dropdown-toggle' data-toggle='dropdown'>My MedConnect<b class='caret'></b></a>
+					<ul class='dropdown-menu'>
+						<li><a href='#'>Manage Favorites</a></li>
+						<li><a href='#'>View History</a></li>
+						<li class='divider'></li>
+						<li><a href='#'>Edit My Profile</a></li>
+						<li><a href='#'>Settings</a></li>
+					</ul>	
+				</li>";
+			}
+			echo
+          "</ul>
 		  <!--<form method='post' action='search.php' width='75px'>
 			<div class='form-group' width='75px'>
 				  <input type='text' name='search' placeholder='Search MedConnect' class='form-control' width='75px'>
 				  <button type='submit' class='btn btn-success'>Search</button>
 			</div>
 		  </form>-->";
-            if(!$logInStatus) { //If they are not logged in, let them log in
+            if(!$logInStatus) { //If they are not logged in, let them log in or register
 				echo
 				"<form class='navbar-form navbar-right' method='post' action='login.php'>
 					<div class='form-group'>
@@ -107,7 +110,8 @@ echo
 						<input type='password' placeholder='Password' maxlength='16' name='enteredPass' class='form-control'>
 					</div>
 					<button type='submit' class='btn btn-success'>Sign in</button>
-				</form>";
+				</form>
+				<a href='createAccount.php'><button type='submit' class='btn btn-success'>Register</button></a>";
 			} else { //They are logged in, show them profile info
 				echo
 				"<form class='navbar-form navbar-right' action='logout.php'>
