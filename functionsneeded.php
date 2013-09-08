@@ -2,11 +2,10 @@
 
 <?php
 
-
 $dbhost = 'localhost';
 $dbname = 'docconnect';
 $dbuser = 'root';
-$dbpass = '';
+$dbpass = 'medconnect';
 $appname = "Doc Connect";
 
 mysql_connect($dbhost, $dbuser, $dbpass) or die(mysql_error());
@@ -50,19 +49,44 @@ function sanitizeString($var)
 
 function showProfile($user)
 {
-    echo "<h2>$user</h3><br />";
+    echo "<h2>$user</h2>";
     if (file_exists("profilePhotos/$user.jpg"))
     {
-        echo "<img src = 'profilePhotos/$user.jpg' align = 'left' />";
+        echo "<img style='border-radius:2px; border-radius:2px;' src = 'profilePhotos/$user.jpg' align = 'left' />";
     }
 
-    $result = makeQuery("SELECT * FROM profiles WHERE user = '$user'");
-
-    if (mysql_num_rows($result))
+    $result = makeQuery("SELECT * FROM doctorProfiles WHERE username = '$user'");
+	$userReviewTable = $user."Reviews";
+   $resultReviews = makeQuery("SELECT * FROM $userReviewTable");
+	 if (mysql_num_rows($result))
     {
         $row = mysql_fetch_row($result);
-        echo stripslashes($row[1]) . "<br clear='left' /> <br/>";
+        echo stripslashes($row[1]) . "<br clear='left' /> <br/>".
+			"My Rating is: ".stripslashes($row[2]);
     }
+	$numReviews = mysql_num_rows($resultReviews);
+	$numReviewsStart = $numReviews;
+	echo "<h3>This Doctor's Reviews</h3><br />";
+	if ($numReviews > 0)
+	{
+		echo "<table class='userReviews' cellspacing='20'><tr><th>Rating</th><th>Review
+		</th></tr>";	
+	}
+	else
+	{
+		echo "<span style='font-size:1.4em;'>There are currently no reviews, Be the first to write one, below.
+                </span>";
+	}
+	while($numReviews > 0)
+	{
+		$reviewRow = mysql_fetch_assoc($resultReviews);
+		echo "<tr><td>".$reviewRow['rating']."</td><td>".$reviewRow['reviewText']."</td></tr>";
+		--$numReviews;
+	}
+	if($numReviewsStart > 0)
+	{
+		echo "</table>";
+	}
 
 }
 

@@ -65,5 +65,11 @@ if ($doctorStatus)
 
 echo "<h2>Congratulations, you have successfully created an account</h2>"
 
+$_SESSION['user'] = $enteredUsername;
+$_SESSION['pass'] = $enteredPass;
+$logInStatus = TRUE;
+header("Location: http://ec2-54-200-14-50.us-west-2.compute.amazonaws.com/DocConnect/index.php");
+die("You are now logged in. Please <a href='index.php'>Click Here</a> To Continue");
+
 ?>
 

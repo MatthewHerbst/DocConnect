@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang='en'><head>
-<meta name='author' content=''>
-<meta charset='utf-8'>
-<script type='text/javascript' src='https://cdn.firebase.com/v0/firebase.js'></script>
-<script src='https://swww.tokbox.com/webrtc/v2.0/js/TB.min.js' type='text/javascript'></script>
-<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
-<link rel='stylesheet' type='text/css' href='styles.css' media='screen' />
-
+<html lang='en'>
+<head>
+	<meta name='author' content=''>
+	<meta charset='utf-8'>
+	<script type='text/javascript' src='js/firebase/firebase.js'></script>
+	<script type='text/javascript' src='js/firebase/idle.js'></script>
+	<script type='text/javascript' src='js/tokbox/TB.min.js'></script>
+	<script type='text/javascript' src='js/jquery/jquery-1.10.2.min.js'></script>
+	<link rel='stylesheet' href='styles.css' type='text/css'/>
 <?php
 session_start();
 
@@ -22,35 +23,6 @@ require_once 'tokbox/Opentok-PHP-SDK/OpenTokSession.php';
 require_once 'tok.php';
 
 
-$error = $enteredUsername = $enteredPass = "";
-
-if (isset($_POST['enteredUsername']))
-{
-    $enteredUsername = sanitizeString($_POST['enteredUsername']);
-    $enteredPass = sanitizeString($_POST['enteredPass']);
-
-    if($enteredUsername == "" || $enteredPass == "")
-    {
-        $error = "<span style='color:red'>Invalid Username or Password</span><br />";
-    }
-    else
-    {
-        $encryptedPass = sha1($enteredPass);
-        $query = "SELECT username, password FROM members WHERE user='$enteredUsername' AND password='$encryptedPass'";
-        $result = makeQuery($query);
-        if(mysql_num_rows($result) == 0)
-        {
-            $error = "<span style = 'color:red'>Invalid Username or Password</span><br />";
-        }
-        else
-        {
-            $_SESSION['user'] = $enteredUsername;
-            $_SESSION['pass'] = $enteredPass;
-            header("Location: http://localhost/DocConnect/index.php");
-            die("You are now logged in. Please <a href='members.php'?view=$enteredUsername>Click Here</a> To Continue");
-        }
-    }
-}
 
 $userstr = 'Guest';
 
@@ -64,30 +36,29 @@ if(isset($_SESSION['user'])) {
 }
 
 
-echo "<title>$appname - $userstr</title>
-	<link rel = 'stylesheet' href = 'styles.css' type = 'text/css' />
+echo "<title>MedConnect - $userstr</title>
 	</head><body>
-	<img src='logo.png' height='100px'>
-	<h1><div class = 'appname'>$appname - $userstr</div></h1>";
+	<div id='header'><img src='logo.png' height='100px'>
+          <form method = 'post' action = 'search.php' 
+			class='navbar-form navbar-right'>
+            <div class='form-group'>
+              <input type='text' placeholder='Search' name='search' class='form-control'>
+            </div>
+            <button type='submit' class='btn btn-success'>Search</button>
+          </form>
+</div>
 
-
-
-if (!$logInStatus)
-{
-	echo <<<_END
-	<h2>Please Login to Access Page</h2><br />
-	<form class = 'loginform' method = 'post' action = 'index.php'>$error
-	<span class = 'fieldname'>Username</span>
-	<input class = 'loginbox' type = 'text' maxlength = '16' name = 'enteredUsername' value = '$enteredUsername' /><br />
-	<span class = 'fieldname'>Password</span>
-	<input class = 'loginbox' type = 'password' maxlength = '16' name = 'enteredPass' value = '$enteredPass' /><br />
-	<br />
-	<span class = 'fieldname'></span>
-	<input type = 'submit' value = 'Login' /><br />
-	<a href = createAccount.php>Or Sign Up Here!</a>
-	</form><br /></div>
-_END;
-	die();
-}
-
+      <div class='masthead'>
+        <ul class='nav nav-justified'>
+          <li class='active'><a href='index.php'>Home</a></li>
+          <li><a href='editProfile.php'>Edit Profile</a></li>
+          <li><a href='leaderboard.php'>Leaderboard</a></li>";
+	if($logInStatus)
+	{
+		echo "<li><a href='viewProfile.php?user=$user'>View Your Profile</a></li>
+				<li style='font-size: 1em;'>
+				<a href='logout.php'>Logout?</a></li>";
+	}  
 ?>
+
+</ul></div>
