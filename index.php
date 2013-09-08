@@ -1,7 +1,6 @@
 <?php
 include_once 'head.php';
 include_once 'login.php';
-
 ?>
 
 <div class="container">
