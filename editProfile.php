@@ -24,7 +24,7 @@ if(isset($_POST['text']))
     }
     else
     {
-        makeQuery("INSERT INTO doctorProfiles VALUES ('$user', '$text', '0')");
+        makeQuery("INSERT INTO doctorProfiles VALUES ('$user', '$text', '0', '0')");
     }
 	$somethingChanged = true;
 }
