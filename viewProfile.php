@@ -2,7 +2,6 @@
 include_once 'head.php';
 include_once 'login.php';
 
-echo "user = ".$user;
 if(isset($_POST['reviewText']) && $_POST['rating'])
 {
 	$reviewText = $_POST['reviewText'];
