@@ -86,8 +86,7 @@ font-family: Actor, sans-serif;
 width: 60%;
 }
 
-p{
-}
+
 
 /*details*/
 ul{
@@ -99,6 +98,15 @@ display:inline-block;
 padding:10px;
 width:100%;
 float:left;
+position:relative;
+}
+div.search{
+position:absolute;
+bottom:0;
+}
+button{
+box-shadow:2px 2px 2px #000000;
+border-radius:2px;
 }
 
 /*createAccount.php*/
@@ -526,7 +534,7 @@ html {
   background-color: #ffffff;
 }
 */
-/*
+
 input,
 button,
 select,
@@ -542,7 +550,7 @@ select[multiple],
 textarea {
   background-image: none;
 }
-*/
+
 a {
   color: #428bca;
   text-decoration: none;
@@ -2227,20 +2235,21 @@ textarea.input-lg {
 }
 
 .btn:focus {
-  outline: thin dotted #333;
+  outline: thin dotted #5D45BF;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 
 .btn:hover,
 .btn:focus {
-  color: #333333;
+  color: #7D88B3;
   text-decoration: none;
 }
 
 .btn:active,
 .btn.active {
   background-image: none;
+  color: #7D88B3;
   outline: 0;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
           box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
@@ -2258,9 +2267,9 @@ fieldset[disabled] .btn {
 }
 
 .btn-default {
-  color: #333333;
+  color: #0F3DD4;
   background-color: #ffffff;
-  border-color: #cccccc;
+  border-color: #1B1BE0;
 }
 
 .btn-default:hover,
@@ -2268,9 +2277,9 @@ fieldset[disabled] .btn {
 .btn-default:active,
 .btn-default.active,
 .open .dropdown-toggle.btn-default {
-  color: #333333;
-  background-color: #ebebeb;
-  border-color: #adadad;
+  color: #0F3DD4;
+  background-color: #0F3DD4;
+  border-color: #7D88B3;
 }
 
 .btn-default:active,
@@ -2295,7 +2304,7 @@ fieldset[disabled] .btn-default:active,
 .btn-default[disabled].active,
 fieldset[disabled] .btn-default.active {
   background-color: #ffffff;
-  border-color: #cccccc;
+  border-color: #0F3DD4;
 }
 
 .btn-primary {
@@ -2423,7 +2432,7 @@ fieldset[disabled] .btn-danger.active {
 
 .btn-success {
   color: #ffffff;
-  background-color: #5cb85c;
+  background-color: #3D59A6;
   border-color: #4cae4c;
 }
 
@@ -2433,7 +2442,7 @@ fieldset[disabled] .btn-danger.active {
 .btn-success.active,
 .open .dropdown-toggle.btn-success {
   color: #ffffff;
-  background-color: #47a447;
+  background-color: #7CADF2;
   border-color: #398439;
 }
 

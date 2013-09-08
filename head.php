@@ -39,9 +39,7 @@ if(isset($_SESSION['user'])) {
 echo "<title>MedConnect - $userstr</title>
 	</head><body>
 	<div id='header'><img src='logo.png' height='100px'>
-        </div>
-<div>
-	  <form class='navbar-form navbar-right'>
+          <form class='navbar-form navbar-right'>
             <div class='form-group'>
               <input type='text' placeholder='Search' name='fields' class='form-control'>
             </div>
