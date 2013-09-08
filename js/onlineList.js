@@ -1,8 +1,8 @@
 //Code source: https://www.firebase.com/tutorial/#session/bkb5rgke1v5
 
 // Prompt the user for a name to use.
-var name = prompt("Your name?", "Guest!"),
-	currentStatus = "? online";
+alert('<?php $_SESSION['user']; ?>');
+var name = '<?php $_SESSION['user']; ?>'
 
 // Get a reference to the presence data in Firebase.
 var userListRef = new Firebase("https://docconnect.firebaseio.com/presence");
@@ -11,7 +11,7 @@ var userListRef = new Firebase("https://docconnect.firebaseio.com/presence");
 var myUserRef = userListRef.push();
 
 // Get a reference to my own presence status.
-var connectedRef = new Firebase("https://docconnect.firebaseio.com/.info/connected");
+var connectedRef = new Firebase('https://docconnect.firebaseio.com/.info/connected');
 connectedRef.on("value", function(isOnline) {
 	if (isOnline.val()) {
 		// If we lose our internet connection, we want ourselves removed from the list.
