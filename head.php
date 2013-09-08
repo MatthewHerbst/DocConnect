@@ -49,13 +49,20 @@ echo "<title>MedConnect - $userstr</title>
    <div class='header' style='width:80%'>
      <ul class='nav nav-justified'>
        <li><a href='index.php'>Home</a></li>
-       <li><a href='viewProfile.php?user=$user'>Profile</a></li>
+       <li><a href='viewProfile.php?userToDisplay=$user'>Profile</a></li>
        <li><a href='leaderboard.php'>Leaderboard</a></li>
-       <li><a href='logout.php'>Logout?</a></li>
        <li><form style='background-color:#EDF1F2; border-color:#EDF1F2;' method = 'post' action = 'search.php'>
-             <input id='search' type='text' placeholder='Press Enter to Search' style='width:200px;' name='search' class='form-control'></form></li>
-     </ul>
-   </div>";  
-?>
+     <input id='search' type='text' placeholder='Press Enter to Search' style='width:200px;' name='search' class='form-control'></form></li>";
+if($logInStatus)
+{
+	echo "<li><a href='logout.php'>Logout?</a></li>'";
+}
 
-</ul></div>
+
+echo "</ul></div>
+<div id='onlineList'>
+</div>";
+
+?>
+        
+

@@ -18,6 +18,8 @@ if(isset($_GET['userToDisplay']))
 
 showProfile($userToDisplay);
 
+if($userToDisplay != $user)
+{
 echo <<<_END
 <div class='sixty' align='center'>
 <h3>Have you worked with this doctor? Leave a Review!</h3>
@@ -36,7 +38,7 @@ echo <<<_END
 <BR><BR>
 <input class='btn btn-success' type = 'submit' value = 'Submit Review' />
 </div></div>
-
+}
 
 _END;
 

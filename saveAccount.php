@@ -59,11 +59,9 @@ if ($doctorStatus)
 {
 	makeQuery("INSERT INTO doctors VALUES ('$userName', '$hospital', 
 				'$specialty', '$education')");
-	$nameReviewsTable = $userName."Reviews";
-	createTable($nameReviewsTable, 'rating INT, reviewText VARCHAR(3000)');
 }
 
-echo "<h2>Congratulations, you have successfully created an account</h2>"
+echo "<h2>Congratulations, you have successfully created an account</h2>";
 
 $_SESSION['user'] = $enteredUsername;
 $_SESSION['pass'] = $enteredPass;
