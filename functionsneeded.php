@@ -80,10 +80,12 @@ function showProfile($user)
 			"My Rating is: ".stripslashes($row[2]);
     }
 	$numReviews = mysql_num_rows($resultReviews);
+	$numReviewsStart = $numReviews;
 	echo "<h3>This Doctor's Reviews</h3><br />";
-	if ($numReviews)
+	if ($numReviews > 0)
 	{
-		echo "<table class='userReviews'><tr><th>Rating</th><th><Review></tr>";	
+		echo "<table class='userReviews' cellspacing='20'><tr><th>Rating</th><th>Review
+		</th></tr>";	
 	}
 	else
 	{
@@ -93,8 +95,12 @@ function showProfile($user)
 	while($numReviews > 0)
 	{
 		$reviewRow = mysql_fetch_assoc($resultReviews);
-		echo $reviewRow['rating']."       ".$reviewRow['reviewText'];
+		echo "<tr><td>".$reviewRow['rating']."</td><td>".$reviewRow['reviewText']."</td></tr>";
 		--$numReviews;
+	}
+	if($numReviewsStart > 0)
+	{
+		echo "</table>";
 	}
 
 }
