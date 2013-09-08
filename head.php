@@ -81,12 +81,12 @@ echo
 			echo
 			"<li><a href='#contact'>Contact</a></li>
           </ul>
-		  <form method='post' action='search.php'>
-			<div class='form-group'>
-				  <input type='text' name='search' placeholder='Search MedConnect' class='form-control'>
+		  <!--<form method='post' action='search.php' width='75px'>
+			<div class='form-group' width='75px'>
+				  <input type='text' name='search' placeholder='Search MedConnect' class='form-control' width='75px'>
 				  <button type='submit' class='btn btn-success'>Search</button>
 			</div>
-		  </form>";
+		  </form>-->";
             if(!$logInStatus) { //If they are not logged in, let them log in
 				echo
 				"<form class='navbar-form navbar-right'>
@@ -110,7 +110,7 @@ echo
 					<li class='dropdown-header'>Nav header</li>
 					<li><a href='#'>Separated link</a></li>
 					<li><a href='#'>One more separated link</a></li>
-				  </ul>
+				  </ul>	
 				</li>
 				<form class='navbar-form navbar-right' action='logout.php'>
 					<button type='submit' class='btn btn-success'>Log Out</button>
