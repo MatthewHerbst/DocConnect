@@ -86,9 +86,9 @@ echo
 					<a href='#' class='dropdown-toggle' data-toggle='dropdown'>My MedConnect<b class='caret'></b></a>
 					<ul class='dropdown-menu'>
 						<li><a href='#'>Manage Favorites</a></li>
-						<li><a href='#'>View History</a></li>
+						<li><a href='viewProfile.php?userToDisplay=$user'>View Profile</a></li>
 						<li class='divider'></li>
-						<li><a href='#'>Edit My Profile</a></li>
+						<li><a href='editProfile.php'>Edit My Profile</a></li>
 						<li><a href='#'>Settings</a></li>
 					</ul>	
 				</li>";
