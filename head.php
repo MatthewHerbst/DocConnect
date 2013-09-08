@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-	<meta name='author' content=''>
 	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<meta name='description' content=''>
+	<meta name='author' content=''>
 	<script type='text/javascript' src='js/firebase/firebase.js'></script>
 	<script type='text/javascript' src='js/firebase/idle.js'></script>
 	<script type='text/javascript' src='js/tokbox/TB.min.js'></script>
 	<script type='text/javascript' src='js/jquery/jquery-1.10.2.min.js'></script>
 	<script type='text/javascript' src='js/bootstrap/bootstrap.min.js'></script>
+	<script type='text/javascript' src='js/bootstrap/offcanvas.js'></script>
 	<link rel='stylesheet' href='styles/bootstrap/bootstrap.css' type='text/css'/>
+	<link rel='stylesheet' href='styles/bootstrap/jumbotron.css' type='text/css'>
+	<link rel='stylesheet' href='styles/bootstrap/offcanvas.css' type='text/css'>
 	<!--<link rel='stylesheet' href='styles/styles.css' type='text/css'/>-->
 	<link rel='icon' type='image/png' href='img/favicon.png'>
 <?php
@@ -53,28 +58,6 @@ echo "<title>MedConnect - $userstr</title>
 </head>
 <body>";
 
-/*
-echo "
-<body>
-	<div class='header' style='width:15%'><img src='img/logo.png' style='width:100%'></div>
-	<div class='header' style='width:80%'>
-		<ul class='nav nav-justified'>
-			<li><a href='index.php'>Home</a></li>";
-			//Show option to view profile if logged in
-			if($logInStatus) {
-				echo "<li><a href='viewProfile.php?userToDisplay=$user'>Profile</a></li>";
-			} else { //Otherwise show option to view the about page
-				echo "<li><a href='about.php'>About</a></li>";
-			}
-			echo "<li><a href='leaderboard.php'>Leaderboard</a></li>
-			<li><form style='background-color:#EDF1F2; border-color:#EDF1F2;' method = 'post' action = 'search.php'>
-			<input id='search' type='text' placeholder='Press Enter to Search' style='width:200px;' name='search' class='form-control'></form></li>";
-			if($logInStatus) {
-				echo "<li><a href='logout.php'>Logout?</a></li>'";
-			}
-	echo "</ul></div>";
-*/
-
 //Fixed navbar
 echo
     "<div class='navbar navbar-inverse navbar-fixed-top'>
@@ -85,39 +68,53 @@ echo
             <span class='icon-bar'></span>
             <span class='icon-bar'></span>
           </button>
-          <a class='navbar-brand' href='#'>Project name</a>
+          <a class='navbar-brand' href='#'>MedConnect</a>
         </div>
         <div class='navbar-collapse collapse'>
           <ul class='nav navbar-nav'>
-            <li class='active'><a href='#'>Home</a></li>
-            <li><a href='#about'>About</a></li>
-            <li><a href='#contact'>Contact</a></li>
-            <li class='dropdown'>
-              <a href='#' class='dropdown-toggle' data-toggle='dropdown'>Dropdown <b class='caret'></b></a>
-              <ul class='dropdown-menu'>
-                <li><a href='#'>Action</a></li>
-                <li><a href='#'>Another action</a></li>
-                <li><a href='#'>Something else here</a></li>
-                <li class='divider'></li>
-                <li class='dropdown-header'>Nav header</li>
-                <li><a href='#'>Separated link</a></li>
-                <li><a href='#'>One more separated link</a></li>
-              </ul>
-            </li>
+            <li class='active'><a href='#'>Home</a></li>";
+			if($logInStatus) {
+				echo "<li><a href='#about'>Consult</a></li>";
+			} else {
+				echo "<li><a href='#about'>About</a></li>";
+            }
+			echo
+			"<li><a href='#contact'>Contact</a></li>
           </ul>
-          <form class='navbar-form navbar-right'>
-            <div class='form-group'>
-              <input type='text' placeholder='Email' class='form-control'>
-            </div>
-            <div class='form-group'>
-              <input type='password' placeholder='Password' class='form-control'>
-            </div>
-            <button type='submit' class='btn btn-success'>Sign in</button>
-          </form>
+		  <form class='navbar-form navbar-right' method='post' action='search.php'>
+			<div class='form-group'>
+				  <input type='text' name='search' placeholder='Search MedConnect' class='form-control'>
+				  <button type='submit' class='btn btn-success'>Search</button>
+			</div>
+		  </form>
+          <form class='navbar-form navbar-right'>";
+            if(!$logInStatus) { //If they are not logged in, let them log in
+				echo
+				"<div class='form-group'>
+				  <input type='text' placeholder='Email' class='form-control'>
+				</div>
+				<div class='form-group'>
+				  <input type='password' placeholder='Password' class='form-control'>
+				</div>
+				<button type='submit' class='btn btn-success'>Sign in</button>";
+			} else { //They are logged in, show them profile info
+				echo
+				"<li class='dropdown'>
+				  <a href='#' class='dropdown-toggle' data-toggle='dropdown'>Dropdown <b class='caret'></b></a>
+				  <ul class='dropdown-menu'>
+					<li><a href='#'>Action</a></li>
+					<li><a href='#'>Another action</a></li>
+					<li><a href='#'>Something else here</a></li>
+					<li class='divider'></li>
+					<li class='dropdown-header'>Nav header</li>
+					<li><a href='#'>Separated link</a></li>
+					<li><a href='#'>One more separated link</a></li>
+				  </ul>
+				</li>";
+			}
+			echo
+          "</form>
         </div><!--/.navbar-collapse -->
       </div>
     </div>";
-	
-	//The list of people who are online (is only populated if you are logged in)
-	echo "<div id='onlineList'>"; if(!isset($_SESSION['user'])){ echo "Please log in to see who is online"; } echo "</div>";
 ?>
