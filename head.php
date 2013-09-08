@@ -51,7 +51,7 @@ echo "<title>MedConnect - $userstr</title>
       <div class='masthead'>
         <ul class='nav nav-justified'>
           <li class='active'><a href='index.php'>Home</a></li>
-          <li><a href='editProfile.php'>Edit Your Profile</a></li>
+          <li><a href='editProfile.php'>Edit Profile</a></li>
           <li><a href='leaderboard.php'>Leaderboard</a></li>";
 	if($logInStatus)
 	{
