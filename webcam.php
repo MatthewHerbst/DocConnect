@@ -75,7 +75,7 @@
 	}
  
 	var publisher = TB.initPublisher(apiKey, 'myVideo', {width:800, height:500});
-	var session   = TB.initSession(sessionId, 'doc1', {width:75, height:75});
+	var session   = TB.initSession(sessionId);
  
 	session.connect(apiKey, token);
 	session.addEventListener("sessionConnected", sessionConnectedHandler);
