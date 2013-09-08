@@ -10,7 +10,33 @@
 	<script type='text/javascript' src='js/onlineList.js'></script>
 	<link rel='stylesheet' href='styles/bootstrap/bootstrap.css' type='text/css'/>
 	<link rel='stylesheet' href='styles/styles.css' type='text/css'/>
+	<link rel="icon" type="image/png" href="img/favicon.png">
 <?php
+session_start();
+ 
+//db and other functions
+require_once 'functionsneeded.php';
+
+//tokbox SDK
+require_once 'tokbox/Opentok-PHP-SDK/OpenTokSDK.php';
+require_once 'tokbox/Opentok-PHP-SDK/OpenTokArchive.php';
+require_once 'tokbox/Opentok-PHP-SDK/OpenTokSession.php';
+
+//For video communication
+require_once 'tok.php';
+
+
+
+$userstr = 'Guest';
+
+if(isset($_SESSION['user'])) {
+  $user = $_SESSION['user'];
+  $logInStatus = TRUE;
+  $userstr = "";
+} else 
+{
+  $logInStatus = FALSE;
+}
 
 
 
