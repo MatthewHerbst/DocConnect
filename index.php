@@ -20,9 +20,8 @@ include_once 'login.php';
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
           </p>
           <div class="jumbotron">
-            <h1>Hello, world!</h1>
-            <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
-          </div>
+			<img src='img/logo.png'>
+		  </div>
           <div class="row">
             <div class="col-6 col-sm-6 col-lg-4">
               <h2>Heading</h2>
@@ -59,6 +58,7 @@ include_once 'login.php';
 
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
           <div class="well sidebar-nav">
+			<div id='onlineList'></div>
             <ul class="nav">
               <li>Sidebar</li>
               <li class="active"><a href="#">Link</a></li>
