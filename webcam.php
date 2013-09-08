@@ -16,9 +16,11 @@
 		<div id='doctors'>
 			<script type='text/javascript'>
 				//Print out a small box for every doctor in the session, except the person in the large box
+				var myDataRef = new Firebase('https://matthewherbst.firebaseIO.com/');
 				
-				//var myDataRef = new Firebase('https://matthewherbst.firebaseIO.com/');
-				
+				//Determine if user is in a seesion
+					//if they are, load it up
+					//if they are not, start a new session and load it up
 			</script>
 			<div class='smallcam' id='maincam'>
 				<img src='img/pic2.jpg' width='100%'>
