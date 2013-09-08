@@ -17,7 +17,7 @@ connectedRef.on("value", function(isOnline) {
 		myUserRef.onDisconnect().remove();
 
 		// Set our initial online status.
-		setUserStatus("? online");
+		setUserStatus("Online");
 	} else {
 		// We need to catch anytime we are marked as offline and then set the correct status. We
 		// could be marked as offline 1) on page load or 2) when we lose our internet connection
@@ -43,8 +43,10 @@ userListRef.on("child_added", function(snapshot) {
 
 	$('<div/>')
 	.attr('id', user.name)
-	.text(user.name + ' is currently ' + user.status)
+        .text(user.name + " : " + user.status)
 	.appendTo('#onlineList');
+
+
 });
 
 // Update our GUI to remove the status of a user who has left.
@@ -62,13 +64,13 @@ userListRef.on("child_changed", function(snapshot) {
 
 // Use idle/away/back events created by idle.js to update our status information.
 document.onIdle = function () {
-	setUserStatus("? idle");
+	setUserStatus("Idle");
 }
 document.onAway = function () {
-	setUserStatus("? away");
+	setUserStatus("Away");
 }
 document.onBack = function (isIdle, isAway) {
-	setUserStatus("? online");
+	setUserStatus("Online");
 }
 
 setIdleTimeout(60000); //1 minute

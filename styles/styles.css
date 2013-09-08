@@ -88,7 +88,39 @@ div.smallcam {
 	display:inline-block;
 	float:left;
 }
-
+#onlineList {
+   position:fixed; /*or  absolute*/
+   top:80%;
+   left:5px;
+   width:10%:
+   background:none;
+   z-index: 999; /* or  greater value */
+   font-size: 12px;
+   background-color:#FFFFFF;
+   border-style: solid;
+   border-width: 2px;
+   border-color: #001200;
+   border-radius: 5px;
+   display:inline-block;
+   padding:5px;
+   float:left;
+}
+.chatlog{
+    font-family: Actor, Arial, sans-serif;
+}
+.Online{
+    border-radius: 2px;
+    font-color:'lime';
+    background-color:##00FF00;
+}
+.Away{
+    border-radius: 2px;
+    font-color: orange;
+}
+.Idle{
+    border-radius: 2px;
+    font-color: red;
+}
 #maincam {
 
 }

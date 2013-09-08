@@ -25,8 +25,6 @@ require_once 'tokbox/Opentok-PHP-SDK/OpenTokSession.php';
 //For video communication
 require_once 'tok.php';
 
-
-
 $userstr = 'Guest';
 
 if(isset($_SESSION['user'])) {
@@ -37,8 +35,6 @@ if(isset($_SESSION['user'])) {
 {
   $logInStatus = FALSE;
 }
-
-
 
 echo "<title>MedConnect - $userstr</title>
 	</head><body>
@@ -52,7 +48,11 @@ echo "<title>MedConnect - $userstr</title>
        <li><form style='background-color:#EDF1F2; border-color:#EDF1F2;' method = 'post' action = 'search.php'>
              <input id='search' type='text' placeholder='Press Enter to Search' style='width:200px;' name='search' class='form-control'></form></li>
      </ul>
-   </div>";  
+   </div>
+
+<div id='onlineList'>
+</div>";
+
    ?>
 
 </ul></div>
