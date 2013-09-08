@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang='en'><head>
-<meta name='author' content=''>
-<meta charset='utf-8'>
-<script type='text/javascript' src='js/firebase/firebase.js'></script>
-<script type='text/javascript' src='js/firebase/idle.js'></script>
-<script type='text/javascript' src='js/tokbox/TB.min.js'></script>
-<script type='text/javascript' src='js/jquery/jquery-1.10.2.min.js'></script>
-
+<html lang='en'>
+<head>
+	<meta name='author' content=''>
+	<meta charset='utf-8'>
+	<script type='text/javascript' src='js/firebase/firebase.js'></script>
+	<script type='text/javascript' src='js/firebase/idle.js'></script>
+	<script type='text/javascript' src='js/tokbox/TB.min.js'></script>
+	<script type='text/javascript' src='js/jquery/jquery-1.10.2.min.js'></script>
+	<link rel='stylesheet' href='styles.css' type='text/css'/>
 <?php
 session_start();
 
@@ -36,12 +37,9 @@ if(isset($_SESSION['user'])) {
 
 
 echo "<title>MedConnect - $userstr</title>
-	<link rel = 'stylesheet' href = 'styles.css' type = 'text/css' />
 	</head><body>
 	<div id='header'><img src='logo.png' height='100px'>
-        </div>
-<div>
-	  <form class='navbar-form navbar-right'>
+          <form class='navbar-form navbar-right'>
             <div class='form-group'>
               <input type='text' placeholder='Search' name='fields' class='form-control'>
             </div>
@@ -54,7 +52,7 @@ echo "<title>MedConnect - $userstr</title>
           <li class='active'><a href='index.php'>Home</a></li>
           <li><a href='about.php'>About</a></li>
           <li><a href='leaderboard.php'>Leaderboard</a></li>
-	  <li><a href='logout.php'>You are logged in as $userstr. Logout?</a></li>
+	  <li style='font-size: 1em;'><a href='logout.php'>$userstr. Logout?</a></li>
         </ul>
       </div>";
 ?>

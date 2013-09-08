@@ -28,8 +28,8 @@ createTable ('userLocations', $locationsTableFields);
 
 $doctorProfilesTableFields = "username VARCHAR(28), bio VARCHAR(3000),".
 							"rating INT, UNIQUE INDEX(username)";
-createTable ('doctorProfiles', $doctorProfilesTableFields)
+createTable ('doctorProfiles', $doctorProfilesTableFields);
 
 
-
+echo "Table setup complete!";
 ?>
