@@ -1,6 +1,5 @@
 <?php
 
-
 $error = $enteredUsername = $enteredPass = "";
 
 if (isset($_POST['enteredUsername']) && !$logInStatus)
@@ -38,7 +37,8 @@ if (isset($_POST['enteredUsername']) && !$logInStatus)
 if (!$logInStatus)
 {
     echo <<<_END
-    <div style='width:30%' align='center'><h2>Please Login to Access Page</h2>
+    <div class='sixty' align='center'><h2>Please Login to Access Page</h2>
+    <div style='width:50%;'>
     <form class = 'loginform' method = 'post' action = 'index.php'>$error
     <input class='form-control' placeholder='Username' type = 'text' maxlength = '16' name = 'enteredUsername' value = '$enteredUsername' /><br />
     <input class = 'form-control' placeholder='Password' type = 'password' maxlength = '16' name = 'enteredPass' value = '$enteredPass' /><br />
@@ -46,7 +46,7 @@ if (!$logInStatus)
     <span class = 'fieldname'></span>
     <input type = 'submit' class='btn btn-success' value = 'Login' />
     <button class='btn btn-success'><a style='color:#FFFFFF; text-decoration:none;' href = 'createAccount.php'>Or Sign Up Here!</a></button>
-    </form></div></div>
+    </form></div></div></div>
 _END;
     die();
 }

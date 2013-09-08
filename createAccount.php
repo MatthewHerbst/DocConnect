@@ -83,6 +83,8 @@ if($logInStatus)
 }
 
 echo <<<_END
+<div class='sixty' align='center'>
+<div style='width:40%'>
 <form method = 'post' action = 'saveAccount.php?save=yes' 
 <div class='form' align='center'>
 <form method = 'post' action = 'saveAccount.php' 
@@ -105,7 +107,7 @@ onsubmit='return checkInput();'>
       <input  class = 'btn btn-success' type = 'submit' id = 'submitbutton' value = 'Sign Up' />
   </form>
 
-</div></div></body></html>
+</div></div></div></body></html>
 
 _END
 ?>
