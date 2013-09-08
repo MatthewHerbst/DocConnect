@@ -43,6 +43,11 @@ echo <<<_END
 _END;
 
 }
+else
+{
+	echo "<h3>This is your profile, to edit, click ".
+		"<a href='editProfile.php'>here</a></h3>"; 
+}
 include_once 'footer.php';
 
 ?>
