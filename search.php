@@ -17,7 +17,7 @@ echo "<h2>Search Results</h2>";
 
 $nameResult = makeQuery("SELECT * FROM members WHERE doctorStatus = 'TRUE' AND (firstname = '$searchRequest' OR lastname = '$searchRequest')");
 
-$docInfoResult = makeQuery("SELECT * FROM doctors WHERE specialty = '$searchQuery' OR hopsital ='$searchQuery'");
+$docInfoResult = makeQuery("SELECT * FROM doctors WHERE specialty = '$searchRequest' OR hopsital ='$searchRequest'");
 
 $numNameRows = mysql_num_rows($nameResult);
 
