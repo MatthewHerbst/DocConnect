@@ -7,10 +7,14 @@
 	<script type='text/javascript' src='js/firebase/idle.js'></script>
 	<script type='text/javascript' src='js/tokbox/TB.min.js'></script>
 	<script type='text/javascript' src='js/jquery/jquery-1.10.2.min.js'></script>
+	<script type='text/javascript' src='js/onlineList.js'></script>
 	<link rel='stylesheet' href='styles/bootstrap/bootstrap.css' type='text/css'/>
 	<link rel='stylesheet' href='styles/styles.css' type='text/css'/>
-	<link rel="icon" type="image/png" href="img/favicon.png">
+	<link rel='icon' type='image/png' href='img/favicon.png'>
 <?php
+ini_set('display_errors',1); 
+ error_reporting(E_ALL);
+
 session_start();
  
 //db and other functions
@@ -24,20 +28,18 @@ require_once 'tokbox/Opentok-PHP-SDK/OpenTokSession.php';
 //For video communication
 require_once 'tok.php';
 
-
-
 $userstr = 'Guest';
 $user = 'Guest';
 if(isset($_SESSION['user'])) {
   $user = $_SESSION['user'];
   $logInStatus = TRUE;
   $userstr = "";
-} else 
-{
+  
+  //Print the user as a globally accessible javascript variable
+  echo "<script type='text/javascript'>var user = " . $_SESSION['user'] . ";</script>";
+} else {
   $logInStatus = FALSE;
 }
-
-
 
 echo "<title>MedConnect - $userstr</title>
 	</head><body>
@@ -52,6 +54,6 @@ echo "<title>MedConnect - $userstr</title>
              <input id='search' type='text' placeholder='Press Enter to Search' style='width:200px;' name='search' class='form-control'></form></li>
      </ul>
    </div>";  
-   ?>
+?>
 
 </ul></div>

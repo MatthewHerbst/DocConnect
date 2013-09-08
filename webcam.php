@@ -1,5 +1,4 @@
-<!DOCTYPE HTML>
-<?php include_once 'head.php'; $temp = 'Matt'; ?>
+<?php include_once 'head.php'; ?>
 <script type='text/javascript'>
 	function changeCams(cam1, cam2){
 		var c3;
@@ -7,11 +6,7 @@
 		document.getElementById(cam1).innerHTML = document.getElementById(cam2).innerHTML;
 		document.getElementById(cam2).innerHTML = c3;
 	};
-	
-	var name = "<?php echo $temp; ?>";
 </script>
-
-<script type='text/javascript' src='js/onlineList.js'></script>
 
 <div class='container'>
 	<div class='cam'>
@@ -20,13 +15,10 @@
 		</div>
 		<div id='doctors'>
 			<script type='text/javascript'>
-				var myDataRef = new Firebase('https://matthewherbst.firebaseIO.com/');
+				//Print out a small box for every doctor in the session, except the person in the large box
 				
-				//TODO: pull the list of doctors in this session, except for the currently selected doctor
-				$('<div/>')
-				.attr('id', user.name)
-				.text(user.name + ' is currently ' + user.status)
-				.appendTo('#doctors');
+				//var myDataRef = new Firebase('https://matthewherbst.firebaseIO.com/');
+				
 			</script>
 			<div class='smallcam' id='maincam'>
 				<img src='img/pic2.jpg' width='100%'>
