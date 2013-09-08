@@ -5,11 +5,10 @@ include_once 'login.php';
 echo "user = ".$user;
 if(isset($_POST['reviewText']) && $_POST['rating'])
 {
-	$reviewsTableName = $user."Reviews";
 	$reviewText = $_POST['reviewText'];
 	$rating = $_POST['rating'];
-	makeQuery("INSERT INTO $reviewsTableName VALUES('$rating', '$reviewText')");
-	header("location:'viewProfile.php'");
+	makeQuery("INSERT INTO $reviewsTableName VALUES('$user', '$rating', '$reviewText')");
+	header("location: viewProfile.php");
 }
 if(isset($_GET['userToDisplay']))
 {
