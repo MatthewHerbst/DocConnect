@@ -3,6 +3,21 @@ include_once 'head.php';
 include_once 'login.php';
 
 ?>
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+  <div class="container">
+	<img src='img/logo.png'>
+	<p><a class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+  </div>
+</div>
+
+
+
+
+
+
+
 <div id='messagesDiv'></div>
 <input type='text' id='nameInput' placeholder='Name'>
 <input type='text' id='messageInput' placeholder='Message'>
