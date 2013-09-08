@@ -34,7 +34,7 @@ if (isset($_POST['enteredUsername']) && !$logInStatus)
 
 
 
-if (!$logInStatus)
+/*if (!$logInStatus)
 {
     echo <<<_END
     <div class='sixty'><h2>Please Login to Access Page</h2>
@@ -49,7 +49,7 @@ if (!$logInStatus)
     </form></div></div></div>
 _END;
     die();
-}
+}*/
 
 
 ?>
