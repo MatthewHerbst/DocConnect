@@ -80,6 +80,16 @@ echo
             }
 			echo
 			"<li><a href='#contact'>Contact</a></li>
+			<li class='dropdown'>
+				<a href='#' class='dropdown-toggle' data-toggle='dropdown'>My MedConnect<b class='caret'></b></a>
+				<ul class='dropdown-menu'>
+					<li><a href='#'>Manage Favorites</a></li>
+					<li><a href='#'>View History</a></li>
+					<li class='divider'></li>
+					<li><a href='#'>Edit My Profile</a></li>
+					<li><a href='#'>Settings</a></li>
+				</ul>	
+			</li>
           </ul>
 		  <!--<form method='post' action='search.php' width='75px'>
 			<div class='form-group' width='75px'>
@@ -89,30 +99,18 @@ echo
 		  </form>-->";
             if(!$logInStatus) { //If they are not logged in, let them log in
 				echo
-				"<form class='navbar-form navbar-right'>
+				"<form class='navbar-form navbar-right' method='post' action='login.php'>
 					<div class='form-group'>
-						<input type='text' placeholder='Email' class='form-control'>
+						<input type='text' placeholder='Email' maxlength='16' name='enteredUsername' class='form-control'>
 					</div>
 					<div class='form-group'>
-						<input type='password' placeholder='Password' class='form-control'>
+						<input type='password' placeholder='Password' maxlength='16' name='enteredPass' class='form-control'>
 					</div>
 					<button type='submit' class='btn btn-success'>Sign in</button>
 				</form>";
 			} else { //They are logged in, show them profile info
 				echo
-				"<li class='dropdown'>
-				  <a href='#' class='dropdown-toggle' data-toggle='dropdown'>Dropdown <b class='caret'></b></a>
-				  <ul class='dropdown-menu'>
-					<li><a href='#'>Action</a></li>
-					<li><a href='#'>Another action</a></li>
-					<li><a href='#'>Something else here</a></li>
-					<li class='divider'></li>
-					<li class='dropdown-header'>Nav header</li>
-					<li><a href='#'>Separated link</a></li>
-					<li><a href='#'>One more separated link</a></li>
-				  </ul>	
-				</li>
-				<form class='navbar-form navbar-right' action='logout.php'>
+				"<form class='navbar-form navbar-right' action='logout.php'>
 					<button type='submit' class='btn btn-success'>Log Out</button>
 				</form>";
 			}
