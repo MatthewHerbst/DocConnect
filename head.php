@@ -55,7 +55,8 @@ echo "<title>MedConnect - $userstr</title>
           <li><a href='leaderboard.php'>Leaderboard</a></li>";
 	if($logInStatus)
 	{
-		echo "<li style='font-size: 1em;'>
+		echo "<li><a href='viewProfile.php?user=$user'>View Your Profile</a></li>
+				<li style='font-size: 1em;'>
 				<a href='logout.php'>Logout?</a></li>";
 	}  
 ?>
