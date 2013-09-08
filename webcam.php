@@ -15,7 +15,7 @@
 	//Code source: https://www.firebase.com/tutorial/#session/bkb5rgke1v5
 	
 	// Prompt the user for a name to use.
-	var name = prompt("Your name?", "Guest"),
+	var name = prompt("Your name?", "Guest!"),
 		currentStatus = "★ online";
 
 	// Get a reference to the presence data in Firebase.
