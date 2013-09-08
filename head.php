@@ -12,6 +12,9 @@
 	<link rel='stylesheet' href='styles/styles.css' type='text/css'/>
 	<link rel='icon' type='image/png' href='img/favicon.png'>
 <?php
+ini_set('display_errors',1); 
+ error_reporting(E_ALL);
+
 session_start();
  
 //db and other functions
