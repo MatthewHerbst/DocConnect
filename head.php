@@ -7,13 +7,16 @@
 	<script type='text/javascript' src='js/firebase/idle.js'></script>
 	<script type='text/javascript' src='js/tokbox/TB.min.js'></script>
 	<script type='text/javascript' src='js/jquery/jquery-1.10.2.min.js'></script>
+	<script type='text/javascript' src='js/bootstrap/bootstrap.min.js'></script>
 	<link rel='stylesheet' href='styles/bootstrap/bootstrap.css' type='text/css'/>
 	<!--<link rel='stylesheet' href='styles/styles.css' type='text/css'/>-->
 	<link rel='icon' type='image/png' href='img/favicon.png'>
 <?php
+//Report all errors
 ini_set('display_errors',1); 
- error_reporting(E_ALL);
+error_reporting(E_ALL);
 
+//Start the session
 session_start();
  
 //db and other functions
@@ -74,41 +77,44 @@ echo "
 
 //Fixed navbar
 echo
-    "<div class='navbar navbar-default navbar-fixed-top'>
-	<div class='container'>
+    "<div class='navbar navbar-inverse navbar-fixed-top'>
+      <div class='container'>
         <div class='navbar-header'>
           <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
             <span class='icon-bar'></span>
             <span class='icon-bar'></span>
             <span class='icon-bar'></span>
           </button>
-          <a class='navbar-brand' href='#'>Med Connect</a>
+          <a class='navbar-brand' href='#'>Project name</a>
         </div>
         <div class='navbar-collapse collapse'>
           <ul class='nav navbar-nav'>
-            <li class='active'><a href='index.php'>Home</a></li>
-            <li><a href='about.php'>About</a></li>
-            <li><a href='contact.php'>Contact</a></li>
-			<li><a href='leaderboard.php'>Leaderboard</a></li>
+            <li class='active'><a href='#'>Home</a></li>
+            <li><a href='#about'>About</a></li>
+            <li><a href='#contact'>Contact</a></li>
+            <li class='dropdown'>
+              <a href='#' class='dropdown-toggle' data-toggle='dropdown'>Dropdown <b class='caret'></b></a>
+              <ul class='dropdown-menu'>
+                <li><a href='#'>Action</a></li>
+                <li><a href='#'>Another action</a></li>
+                <li><a href='#'>Something else here</a></li>
+                <li class='divider'></li>
+                <li class='dropdown-header'>Nav header</li>
+                <li><a href='#'>Separated link</a></li>
+                <li><a href='#'>One more separated link</a></li>
+              </ul>
+            </li>
           </ul>
-          <ul class='nav navbar-nav navbar-right'>";
-            if($logInStatus) { //Give option to log out if logged in
-				echo "<li class='dropdown'>
-				  <a href='#' class='dropdown-toggle' data-toggle='dropdown'>Profile <b class='caret'></b></a>
-				  <ul class='dropdown-menu'>
-					<li><a href='#'>Manage Favorites</a></li>
-					<li><a href='#'>My History</a></li>
-					<li class='divider'></li>
-					<li><a href='#'>Edit Profile</a></li>
-					<li><a href='#'>Settings</a></li>
-				  </ul>
-				</li>
-				<li><a href='logout.php'>Log Out</a></li>";
-			} else {
-				//TODO: a login and register option
-			}
-          echo "</ul>
-        </div><!--/.nav-collapse -->
+          <form class='navbar-form navbar-right'>
+            <div class='form-group'>
+              <input type='text' placeholder='Email' class='form-control'>
+            </div>
+            <div class='form-group'>
+              <input type='password' placeholder='Password' class='form-control'>
+            </div>
+            <button type='submit' class='btn btn-success'>Sign in</button>
+          </form>
+        </div><!--/.navbar-collapse -->
       </div>
     </div>";
 	
