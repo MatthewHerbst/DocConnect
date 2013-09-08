@@ -2,25 +2,10 @@
 
 <?php
 
-
-/*$url = "mysql://b210a37bc0803d:b0f2505e@us-cdbr-east-04.cleardb.com/".
-		"heroku_ed2de3a9c341196?reconnect=true";
-
-$url = parse_url(getenv($url))
-
-$server = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$db = substr($url["path"],1);
-
-mysql_connect($server, $username, $password);
-
-mysql_select_db($db);*/
-
 $dbhost = 'localhost';
 $dbname = 'docconnect';
 $dbuser = 'root';
-$dbpass = '';
+$dbpass = 'medconnect';
 $appname = "Doc Connect";
 
 mysql_connect($dbhost, $dbuser, $dbpass) or die(mysql_error());
