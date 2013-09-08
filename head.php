@@ -68,5 +68,5 @@ echo "<title>MedConnect - $userstr</title>
 	echo "</ul></div>";
 	
 	//The list of people who are online (is only populated if you are logged in)
-	echo "<div id='onlineList'>Please log in to see who's online</div>";
+	echo "<div id='onlineList'>"; if(!isset($_SESSION['user'])){ echo "Please log in to see who is online"; } echo "</div>";
 ?>
