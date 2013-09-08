@@ -36,7 +36,7 @@ $reviewTableFields = "username VARCHAR(28), rating INT, review VARCHAR(3000)";
 createTable ('reviews', $reviewTableFields);
 
 $favoritesTableFields = "username VARCHAR(28), favoritedUser VARCHAR(28)"
-createTable ('favorites', $favoritedTableFields);
+createTable ('favorites', $favoritesTableFields);
 
 echo "Table setup complete!!";
 ?>
