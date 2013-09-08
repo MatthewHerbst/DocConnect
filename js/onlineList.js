@@ -5,13 +5,13 @@ var name = prompt("Your name?", "Guest!"),
 	currentStatus = "? online";
 
 // Get a reference to the presence data in Firebase.
-var userListRef = new Firebase("https://bkb5rgke1v5.firebaseio-demo.com/");
+var userListRef = new Firebase("https://docconnect.firebaseio.com/presence");
 
 // Generate a reference to a new location for my user with push.
 var myUserRef = userListRef.push();
 
 // Get a reference to my own presence status.
-var connectedRef = new Firebase("http://presence.firebaseio-demo.com/.info/connected");
+var connectedRef = new Firebase("https://docconnect.firebaseio.com/.info/connected");
 connectedRef.on("value", function(isOnline) {
 	if (isOnline.val()) {
 		// If we lose our internet connection, we want ourselves removed from the list.

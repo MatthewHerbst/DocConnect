@@ -9,50 +9,42 @@
 	}  
 </script>
 
-<div id='onlineList'></div>
-
 <script type='text/javascript' src='js/onlineList.js'></script>
 
 <div class='container'>
-	<div class='container' align='center'>
-		<div class='cam'>
-			<div class='doctor'>
-				<div class='maincam' id='maincam'>
-					<img src='img/pic1.jpg' width='100%'>
-				</div>
-			</div><!--doctor-->
-			<div class='doctor'>
-				<div class='smallcam' id='smallcam' onclick='changeCams("maincam", "smallcam")'>
-					<img src='img/pic2.jpg' width='100%'> <!--100% of the div, which is 45% of box-->
-				</div>
-				<div class='smallcam' id='smallcam2' onclick='changeCams("maincam", "smallcam2")'>
-					<img src='img/pic1.jpg' width='100%'>
-				</div>
-				<div class='smallcam' id='smallcam3' onclick='changeCams("maincam", "smallcam3")'>
-					<img src='img/pic2.jpg' width='100%'>
-				</div>
-				<div class='smallcam' id='smallcam4' onclick='changeCams("maincam", "smallcam4")'>
-					<img src='img/pic2.jpg' width='100%'>
-				</div>
-				<div class='smallcam' id='smallcam5' onclick='changeCams("maincam", "smallcam4")'>
-					<img src='img/pic2.jpg' width='100%'>
-				</div>
-			</div><!--doctor-->
-		</div>
-      
-		<div class='info' align='left'>
-			<h1>Information</h1>
-			<ul>
-				<li>Name:</li>
-				<li>Location:</li>
-				<li>Specialist:</li>
-				<li>Local Time:</li>
-			</ul>
-				
-			<div class='chat' align='left'>
-				<h1>Chat</h1>
-				<p> Person 1: <br /> Person 2:</p>
+	<div class='cam'>
+		<div id='currentDoctors' class='doctor'>
+			<div class='maincam' id='maincam'>
+				<img src='img/pic1.jpg' width='100%'>
 			</div>
 		</div>
+		<div id='doctors'>
+			<script type='text/javascript'>
+				//TODO: pull the list of doctors in this session, except for the currently selected doctor
+					$('<div/>')
+					.attr('id', user.name)
+					.text(user.name + ' is currently ' + user.status)
+					.appendTo('#doctors');
+				
+				<div class='smallcam' id='maincam'>
+					<img src='img/pic2.jpg' width='100%'>
+				</div>
+			</script>
+		</div>
 	</div>
+	<div id='onlineList'></div>
+	<div class='doctorInfo' align='left'>
+		<h1>About Dr. Kofman</h1>
+		<ul>
+			<li>Name:</li>
+			<li>Location:</li>
+			<li>Specialist:</li>
+			<li>Local Time:</li>
+		</ul>
+	</div>
+	<div id='chat' align='left'>
+		<h1>Chat</h1>
+		<p> Person 1: <br /> Person 2:</p>
+	</div>
+</div>
 <?php include_once 'footer.php'; ?>
