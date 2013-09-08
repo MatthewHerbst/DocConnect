@@ -11,6 +11,7 @@
 	<script type='text/javascript' src='js/jquery/jquery-1.10.2.min.js'></script>
 	<script type='text/javascript' src='js/bootstrap/bootstrap.min.js'></script>
 	<script type='text/javascript' src='js/bootstrap/offcanvas.js'></script>
+	<script type='text/javascript' src='js/chat.js'></script>
 	<link rel='stylesheet' href='styles/bootstrap/bootstrap.css' type='text/css'/>
 	<link rel='stylesheet' href='styles/bootstrap/jumbotron.css' type='text/css'>
 	<link rel='stylesheet' href='styles/bootstrap/offcanvas.css' type='text/css'>
