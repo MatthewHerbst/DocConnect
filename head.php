@@ -57,7 +57,7 @@ echo "<title>MedConnect - $userstr</title>
 			if($logInStatus) {
 				echo "<li><a href='viewProfile.php?userToDisplay=$user'>Profile</a></li>";
 			} else { //Otherwise show option to view the about page
-				echo "<li><a href='about.php'>About</a></li>;"
+				echo "<li><a href='about.php'>About</a></li>";
 			}
 			echo "<li><a href='leaderboard.php'>Leaderboard</a></li>
 			<li><form style='background-color:#EDF1F2; border-color:#EDF1F2;' method = 'post' action = 'search.php'>
