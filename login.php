@@ -9,7 +9,7 @@ if (isset($_POST['enteredUsername']) && !$logInStatus)
 
     if($enteredUsername == "" || $enteredPass == "")
     {
-        $error = "<span style='color:red'>Invalid Username or Password</span><br />";
+        $error = "<span>Invalid Username or Password</span><br />";
     }
     else
     {
@@ -18,7 +18,7 @@ if (isset($_POST['enteredUsername']) && !$logInStatus)
         $result = makeQuery($query);
         if(mysql_num_rows($result) == 0)
         {
-            $error = "<span style = 'color:red'>Invalid Username or Password</span><br />";
+            $error = "<span>Invalid Username or Password</span><br />";
         }
         else
         {
@@ -37,15 +37,15 @@ if (isset($_POST['enteredUsername']) && !$logInStatus)
 if (!$logInStatus)
 {
     echo <<<_END
-    <div class='sixty' align='center'><h2>Please Login to Access Page</h2>
-    <div style='width:30%;'>
-    <form class = 'loginform' method = 'post' action = 'index.php'>$error
-    <input class='form-control' placeholder='Username' type = 'text' maxlength = '16' name = 'enteredUsername' value = '$enteredUsername' /><br />
-    <input class = 'form-control' placeholder='Password' type = 'password' maxlength = '16' name = 'enteredPass' value = '$enteredPass' /><br />
+    <div class='sixty'><h2>Please Login to Access Page</h2>
+    <div>
+    <form class='loginform' method='post' action='index.php'>$error
+    <input class='form-control' placeholder='Username' type='text' maxlength='16' name='enteredUsername' value='$enteredUsername' /><br />
+    <input class='form-control' placeholder='Password' type='password' maxlength='16' name='enteredPass' value='$enteredPass' /><br />
     <br />
-    <span class = 'fieldname'></span>
-    <input type = 'submit' class='btn btn-success' value = 'Login' />
-    <button class='btn btn-success'><a style='color:#FFFFFF; text-decoration:none;' href = 'createAccount.php'>Or Sign Up Here!</a></button>
+    <span class='fieldname'></span>
+    <input type='submit' class='btn btn-success' value='Login' />
+    <button class='btn btn-success'><a href='createAccount.php'>Or Sign Up Here!</a></button>
     </form></div></div></div>
 _END;
     die();

@@ -1,90 +1,3 @@
-form.master{
-margin:5px;
-padding:5px;
-}
-body {
-  padding-top: 20px;
-}
-
-.footer {
-  border-top: 1px solid #eee;
-  margin-top: 40px;
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
-/* Customize the nav-justified links to be fill the entire space of the .navbar */
-
-.nav-justified, #search {
-  background-color: #EDF1F2;
-  border-radius: 1px;
-  border: 1px solid #ccc;
-  
-}
-.nav-justified > li > a {
-  padding-top: 1px;
-  padding-bottom: 1px;
-  color: #000000;
-  font-weight: none;
-  font-size: 2em;
-  font-variant: small-caps;
-  text-align: center;
-  border-bottom: 1px solid #d5d5d5;
-  background-color: #EDF1F2; /* Old browsers */
-  background-repeat: repeat-x; /* Repeat the gradient */
-  background-image: -moz-linear-gradient(top, #EDF1F2 0%, #e5e5e5 100%); /* FF3.6+ */
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f5f5f5), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
-  background-image: -webkit-linear-gradient(top, #EDF1F2 0%,#e5e5e5 100%); /* Chrome 10+,Safari 5.1+ */
-  background-image: -ms-linear-gradient(top, #EDF1F2 0%,#e5e5e5 100%); /* IE10+ */
-  background-image: -o-linear-gradient(top, #EDF1F2 0%,#e5e5e5 100%); /* Opera 11.10+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
-  background-image: linear-gradient(top, #EDF1F2 0%,#e5e5e5 100%); /* W3C */
-}
-.nav-justified > .active > a,
-.nav-justified > .active > a:hover,
-.nav-justified > .active > a:focus, #search {
-  background-color: #ddd;
-  background-image: none;
-  box-shadow: inset 0 3px 7px rgba(0,0,0,.15);
-}
-.nav-justified > li:first-child > a, #search {
-  border-radius: 2px 2px 0 0;
-}
-.nav-justified > li:last-child > a {
-  border-bottom: 0;
-  border-radius: 0 0 2px 2px;
-}
-
-@media (min-width: 768px) {
-  .nav-justified {
-    max-height: 52px;
-  }
-  .nav-justified > li > a {
-    border-left: 1px solid #fff;
-    border-right: 1px solid #d5d5d5;
-  }
-  .nav-justified > li:first-child > a {
-    border-left: 0;
-    border-radius: 2px 0 0 2px;
-  }
-  .nav-justified > li:last-child > a {
-    border-radius: 0 2px 2px 0;
-    border-right: 0;
-  }
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
-  .masthead,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-
 /*!
  * Bootstrap v3.0.0
  *
@@ -133,6 +46,9 @@ html {
       -ms-text-size-adjust: 100%;
 }
 
+body {
+  margin: 0;
+}
 
 a:focus {
   outline: thin dotted;
@@ -236,7 +152,7 @@ input,
 select,
 textarea {
   margin: 0;
-  font-family: 'Mouse Memoirs', Actor, Arial, sans-serif;
+  font-family: inherit;
   font-size: 100%;
 }
 
@@ -383,16 +299,16 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-/*body {
+body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
   color: #333333;
   background-color: #ffffff;
 }
-*/
 
 input,
+button,
 select,
 textarea {
   font-family: inherit;
@@ -400,6 +316,7 @@ textarea {
   line-height: inherit;
 }
 
+button,
 input,
 select[multiple],
 textarea {
@@ -533,6 +450,9 @@ cite {
   text-align: center;
 }
 
+h1,
+h2,
+h3,
 h4,
 h5,
 h6,
@@ -542,7 +462,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "Actor", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
   line-height: 1.1;
 }
@@ -2087,21 +2007,20 @@ textarea.input-lg {
 }
 
 .btn:focus {
-  outline: thin dotted #5D45BF;
+  outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 
 .btn:hover,
 .btn:focus {
-  color: #7D88B3;
+  color: #333333;
   text-decoration: none;
 }
 
 .btn:active,
 .btn.active {
   background-image: none;
-  color: #7D88B3;
   outline: 0;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
           box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
@@ -2119,9 +2038,9 @@ fieldset[disabled] .btn {
 }
 
 .btn-default {
-  color: #0F3DD4;
+  color: #333333;
   background-color: #ffffff;
-  border-color: #1B1BE0;
+  border-color: #cccccc;
 }
 
 .btn-default:hover,
@@ -2129,9 +2048,9 @@ fieldset[disabled] .btn {
 .btn-default:active,
 .btn-default.active,
 .open .dropdown-toggle.btn-default {
-  color: #0F3DD4;
-  background-color: #0F3DD4;
-  border-color: #7D88B3;
+  color: #333333;
+  background-color: #ebebeb;
+  border-color: #adadad;
 }
 
 .btn-default:active,
@@ -2156,7 +2075,7 @@ fieldset[disabled] .btn-default:active,
 .btn-default[disabled].active,
 fieldset[disabled] .btn-default.active {
   background-color: #ffffff;
-  border-color: #0F3DD4;
+  border-color: #cccccc;
 }
 
 .btn-primary {
@@ -2284,10 +2203,8 @@ fieldset[disabled] .btn-danger.active {
 
 .btn-success {
   color: #ffffff;
-  background-color: #3D59A6;
+  background-color: #5cb85c;
   border-color: #4cae4c;
-  font-family: 'Denk One', Actor, Arial, sans-serif;
-  font-size: 1.3em;
 }
 
 .btn-success:hover,
@@ -2296,7 +2213,7 @@ fieldset[disabled] .btn-danger.active {
 .btn-success.active,
 .open .dropdown-toggle.btn-success {
   color: #ffffff;
-  background-color: #7CADF2;
+  background-color: #47a447;
   border-color: #398439;
 }
 
@@ -4367,10 +4284,10 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-form {
-  padding: 1px px;
-  margin-top: 2px;
+  padding: 10px 15px;
+  margin-top: 8px;
   margin-right: -15px;
-  margin-bottom: 2px;
+  margin-bottom: 8px;
   margin-left: -15px;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
@@ -4384,7 +4301,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     margin-bottom: 0;
     vertical-align: middle;
   }
-  .navbar-form .form-control
+  .navbar-form .form-control {
     display: inline-block;
   }
   .navbar-form .radio,
@@ -6862,4 +6779,27 @@ tr.visible-print {
 th.visible-print,
 td.visible-print {
   display: none !important;
+}
+
+@media print {
+  .visible-print {
+    display: block !important;
+  }
+  tr.visible-print {
+    display: table-row !important;
+  }
+  th.visible-print,
+  td.visible-print {
+    display: table-cell !important;
+  }
+  .hidden-print {
+    display: none !important;
+  }
+  tr.hidden-print {
+    display: none !important;
+  }
+  th.hidden-print,
+  td.hidden-print {
+    display: none !important;
+  }
 }
