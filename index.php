@@ -29,10 +29,11 @@ include_once 'login.php';
 
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
           <div class="well sidebar-nav">
+			<p><b>Who's online...</b></p>
 			<div id='onlineList'></div>
 			<hr>
+			<p><b>Chat with others!!!</b></p>
 			<div id='messagesDiv'></div>
-			<p><b>Caht with others online!!!</b></p>
 			<hr>
 			<input type='text' id='messageInput' placeholder='Message'>
           </div><!--/.well -->
