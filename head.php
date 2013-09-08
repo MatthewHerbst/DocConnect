@@ -81,7 +81,7 @@ echo
 				echo "<li><a href='about.php'>About</a></li>";
             }
 			echo
-			"<li><a href='#'>Contact</a></li>";
+			"<li><a href='listOfDoctors.php'>List of Doctors</a></li>";
 			if($logInStatus) {
 				echo "<li class='dropdown'>
 					<a href='#' class='dropdown-toggle' data-toggle='dropdown'>My MedConnect<b class='caret'></b></a>
