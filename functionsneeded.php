@@ -9,8 +9,6 @@ mysql_connect($dbhost, $dbuser, $dbpass) or die(mysql_error());
 
 mysql_select_db($dbname) or die(mysql_error());
 
-echo "<link href='styles.css' rel='stylesheet' type='text/css'>";
-
 function createTable($name, $query)
 {
     makeQuery("CREATE TABLE IF NOT EXISTS $name($query)");
