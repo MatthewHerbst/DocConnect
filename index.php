@@ -4,52 +4,38 @@ include_once 'login.php';
 
 ?>
 
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<!--<div class="jumbotron">
-  <div class="container">
-	<img src='img/logo.png'>
-	<p><a class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-  </div>
-</div>-->
-
 <div class="container">
-
       <div class="row row-offcanvas row-offcanvas-right">
         <div class="col-xs-12 col-sm-9">
-          <p class="pull-right visible-xs">
-            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-          </p>
-          <div class="jumbotron">
 			<img src='img/logo.png'>
-		  </div>
           <div class="row">
             <div class="col-6 col-sm-6 col-lg-4">
-              <h2>Heading</h2>
+              <h2>Heading1</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
               <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
             </div><!--/span-->
             <div class="col-6 col-sm-6 col-lg-4">
-              <h2>Heading</h2>
+              <h2>Heading2/h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
               <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
             </div><!--/span-->
             <div class="col-6 col-sm-6 col-lg-4">
-              <h2>Heading</h2>
+              <h2>Heading3</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
               <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
             </div><!--/span-->
             <div class="col-6 col-sm-6 col-lg-4">
-              <h2>Heading</h2>
+              <h2>Heading4</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
               <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
             </div><!--/span-->
             <div class="col-6 col-sm-6 col-lg-4">
-              <h2>Heading</h2>
+              <h2>Heading5</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
               <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
             </div><!--/span-->
             <div class="col-6 col-sm-6 col-lg-4">
-              <h2>Heading</h2>
+              <h2>Heading6</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
               <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
             </div><!--/span-->
@@ -86,7 +72,7 @@ include_once 'login.php';
 <input type='text' id='nameInput' placeholder='Name'>
 <input type='text' id='messageInput' placeholder='Message'>
 
-<div id='myPublisherDiv'></div>
+<div id='myPublisherDiv'>hello</div>
 
 <script type='text/javascript'>
 	var myDataRef = new Firebase('https://matthewherbst.firebaseIO.com/');
