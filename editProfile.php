@@ -102,15 +102,16 @@ else
 	}
 
     echo <<<_END
+    <div class='sixty' align='center'><div style='width:30%;'>
     <form method='post' action='editProfile.php' enctype='multipart/form-data'>
-    <h3>Enter or Edit Your Profile Details</h3>
-    <span class='desrciption'>Your Bio</span><br />
-    <textarea name='text' cols='50' rows='3'>$textOutput</textarea><br />
+    <h4>Enter or Edit Your Profile Details</h4>
+    <span style='font-size:1.4em'>Your Bio</span><br />
+    <textarea name='text' cols='50' rows='3'>$textOutput</textarea><br /><BR>
 _END;
 ?>
-    <span class = 'addphoto'>Add a photo </span><input type = 'file' name = 'image' size = '14' maxlength = '32'/>
-    <input type = 'submit' value = 'Save Profile Changes'/>
-    </form></div><br /></body><html>
+    <span style='font-size:1.4em' class = 'addphoto'>Add a photo </span><input class='form-control' type = 'file' name = 'image' size = '14' maxlength = '32'/><BR>
+    <input class='btn btn-success' type = 'submit' value = 'Save Profile Changes'/>
+    </form></div></div></div></body><html>
                                                                                                                104,22-25     Bot
 
 

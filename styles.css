@@ -76,6 +76,12 @@ float:left;
 }
 #smallcam{
 }
+
+div.sixty{
+width:100%;
+float:left;
+}
+
 div.info{
 font-family: Actor, sans-serif;
 border-style: solid;
