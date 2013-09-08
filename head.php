@@ -10,7 +10,7 @@
 	<script type='text/javascript' src='js/onlineList.js'></script>
 	<link rel='stylesheet' href='styles/bootstrap/bootstrap.css' type='text/css'/>
 	<link rel='stylesheet' href='styles/styles.css' type='text/css'/>
-	<link rel="icon" type="image/png" href="img/favicon.png">
+	<link rel='icon' type='image/png' href='img/favicon.png'>
 <?php
 session_start();
  

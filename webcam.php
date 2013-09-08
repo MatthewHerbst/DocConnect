@@ -17,7 +17,7 @@
 			<script type='text/javascript'>
 				//Print out a small box for every doctor in the session, except the person in the large box
 				
-				var myDataRef = new Firebase('https://matthewherbst.firebaseIO.com/');
+				//var myDataRef = new Firebase('https://matthewherbst.firebaseIO.com/');
 				
 			</script>
 			<div class='smallcam' id='maincam'>

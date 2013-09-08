@@ -1,6 +1,7 @@
 //Code source: https://www.firebase.com/tutorial/#session/bkb5rgke1v5
 
 //Name is retreived from the name varible placed by the header
+var name = "";
 
 // Get a reference to the presence data in Firebase.
 var userListRef = new Firebase("https://docconnect.firebaseio.com/presence");
