@@ -71,7 +71,7 @@
 	// Update our GUI to change a user"s status.
 	userListRef.on("child_changed", function(snapshot) {
 		var user = snapshot.val();
-		$("#presenceDiv").children("#" + getMessageId(snapshot))
+		$("#presenceDiv").children("#" + user.name)
 		.text(user.name + " is currently " + user.status);
 	});
 

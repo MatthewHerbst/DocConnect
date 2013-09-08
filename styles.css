@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Actor');
 @import url('https://fonts.googleapis.com/css?family=Quintessential');
+@import url('https://fonts.googleapis.com/css?family=Gudea');
+@import url('https://fonts.googleapis.com/css?family=Denk%20One');
 
 head{
 
@@ -23,7 +25,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', end
 
 h1, h2, h3{
 font-family: 'Quintessential', Arial, sans-serif;
-
 }
 
 div.container{
@@ -85,15 +86,12 @@ float:left;
 div.info{
 font-family: Actor, sans-serif;
 border-style: solid;
-
 }
 
 div.chat{
 font-family: Actor, sans-serif;
 width: 60%;
 }
-
-
 
 /*details*/
 ul{
@@ -114,15 +112,19 @@ bottom:0;
 button{
 box-shadow:2px 2px 2px #000000;
 border-radius:2px;
+font-style:'Denk One', Actor, Arial, Sans-serif;
 }
-
+table, tr, td, th{
+font-family: Actor, sans-serif;
+font-size: 1.3em;
+}
 /*createAccount.php*/
 select,option,form{
 font-family: Actor, sans serif;
 font-size: 1.2em;
 }
 input{
-font-family: Actor, sans serif;
+font-family: Gudea, sans serif;
 box-shadow:2px 2px 2px #000000;
 border-radius:2px;
 border:1px solid;
@@ -134,7 +136,6 @@ div.form{
 box-shadow:2px 2px 2px #000000;
 border:2px groove;
 border-radius:2px;
-
 }
 
 
@@ -389,7 +390,7 @@ input,
 select,
 textarea {
   margin: 0;
-  font-family: inherit;
+  font-family: 'Mouse Memoirs', Actor, Arial, sans-serif;
   font-size: 100%;
 }
 
@@ -546,7 +547,6 @@ html {
 */
 
 input,
-button,
 select,
 textarea {
   font-family: inherit;
@@ -554,7 +554,6 @@ textarea {
   line-height: inherit;
 }
 
-button,
 input,
 select[multiple],
 textarea {
@@ -2441,6 +2440,8 @@ fieldset[disabled] .btn-danger.active {
   color: #ffffff;
   background-color: #3D59A6;
   border-color: #4cae4c;
+  font-family: 'Denk One', Actor, Arial, sans-serif;
+  font-size: 1.3em;
 }
 
 .btn-success:hover,
