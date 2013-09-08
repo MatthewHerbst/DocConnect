@@ -25,20 +25,18 @@ require_once 'tokbox/Opentok-PHP-SDK/OpenTokSession.php';
 //For video communication
 require_once 'tok.php';
 
-
-
 $userstr = 'Guest';
 
 if(isset($_SESSION['user'])) {
   $user = $_SESSION['user'];
   $logInStatus = TRUE;
   $userstr = "";
-} else 
-{
+  
+  //Print the user as a globally accessible javascript variable
+  echo "<script type='text/javascript'>var user = \"<?php echo $_SESSION['user']; ?>\"</script>";
+} else {
   $logInStatus = FALSE;
 }
-
-
 
 echo "<title>MedConnect - $userstr</title>
 	</head><body>
@@ -53,6 +51,6 @@ echo "<title>MedConnect - $userstr</title>
              <input id='search' type='text' placeholder='Press Enter to Search' style='width:200px;' name='search' class='form-control'></form></li>
      </ul>
    </div>";  
-   ?>
+?>
 
 </ul></div>
