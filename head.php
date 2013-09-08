@@ -112,7 +112,8 @@ echo
 				  </ul>
 				</li>";
 			}
-          </form>
+			echo
+          "</form>
         </div><!--/.navbar-collapse -->
       </div>
     </div>";
