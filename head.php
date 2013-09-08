@@ -36,7 +36,7 @@ if(isset($_SESSION['user'])) {
   $userstr = "";
   
   //Print the user as a globally accessible javascript variable
-  echo "<script type='text/javascript'>var user = \"<?php echo $_SESSION['user']; ?>\"</script>";
+  echo "<script type='text/javascript'>var user = " . $_SESSION['user'] . ";</script>";
 } else {
   $logInStatus = FALSE;
 }
