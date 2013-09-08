@@ -102,8 +102,8 @@ echo
 		  </form>-->";
             if(!$logInStatus) { //If they are not logged in, let them log in or register
 				echo
-				"<form class='navbar-form navbar-right'>
-					<a href='createAccount.php'><button class='btn btn-success'>Register</button></a>
+				"<form class='navbar-form navbar-right' action='createAccount.php'>
+					<button type='submit' class='btn btn-success'>Register</button>
 				</form>
 				<form class='navbar-form navbar-right' method='post' action='login.php'>
 					<div class='form-group'>
