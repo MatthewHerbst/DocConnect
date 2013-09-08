@@ -56,8 +56,7 @@ function showProfile($user)
     }
 
     $result = makeQuery("SELECT * FROM doctorProfiles WHERE username = '$user'");
-	$userReviewTable = $user."Reviews";
-   $resultReviews = makeQuery("SELECT * FROM $userReviewTable");
+   $resultReviews = makeQuery("SELECT * FROM reviews WHERE username = '$user'");
 	 if (mysql_num_rows($result))
     {
         $row = mysql_fetch_row($result);

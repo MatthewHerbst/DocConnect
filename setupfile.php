@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 <title>Setup</title>
@@ -27,9 +28,15 @@ $locationsTableFields = "username VARCHAR(28), country VARCHAR(28),".
 createTable ('userLocations', $locationsTableFields);
 
 $doctorProfilesTableFields = "username VARCHAR(28), bio VARCHAR(3000),".
-							"rating INT, UNIQUE INDEX(username)";
+							"rating INT, numOfHelps INT, UNIQUE INDEX(username)";
 createTable ('doctorProfiles', $doctorProfilesTableFields);
 
+$reviewTableFields = "username VARCHAR(28), rating INT, review VARCHAR(3000)";
+
+createTable ('reviews', $reviewTableFields);
+
+$favoritesTableFields = "username VARCHAR(28), favoritedUser VARCHAR(28)"
+createTable ('favorites', $favoritesTableFields);
 
 echo "Table setup complete!!";
 ?>
