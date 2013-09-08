@@ -1,3 +1,145 @@
+@import url('https://fonts.googleapis.com/css?family=Actor');
+@import url('https://fonts.googleapis.com/css?family=Quintessential');
+@import url('https://fonts.googleapis.com/css?family=Gudea');
+@import url('https://fonts.googleapis.com/css?family=Denk%20One');
+
+head{
+
+}
+
+body{
+height:80%; /*leave space for header*/
+width:95%;
+background: #BFDEF5; /* Old browsers */
+
+/*Taken from http://www.colorzilla.com/gradient-editor*/
+background-color: -moz-linear-gradient(top, #b3dced 0%, #29b8e5 50%, #bce0ee 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b3dced), color-stop(50%,#29b8e5), color-stop(100%,#bce0ee)); /* Chrome,Safari4+ */
+/*background-color: -webkit-linear-gradient(top, #b3dced 0%,#29b8e5 50%,#bce0ee 100%); /* Chrome10+,Safari5.1+ */
+background-color: -o-linear-gradient(top, #b3dced 0%,#29b8e5 50%,#bce0ee 100%); /* Opera 11.10+ */
+background-color: -ms-linear-gradient(top, #b3dced 0%,#29b8e5 50%,#bce0ee 100%); /* IE10+ */
+background-color: linear-gradient(to bottom, #b3dced 0%,#29b8e5 50%,#bce0ee 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', endColorstr='#bce0ee',GradientType=0 ); /* IE6-9 */
+
+}
+
+h1, h2, h3{
+font-family: 'Quintessential', Arial, sans-serif;
+}
+
+div.container{
+float:left;
+clear:left;
+}
+
+div.cam{
+width:100%;
+height:90%;
+float: left;
+padding:2px;
+}
+div.left{
+width:90%;
+height:90%;
+float:left;
+}
+div.doctor{
+display:inline-block;
+padding:10px;
+width:40%;
+float:left;
+}
+
+div.maincam{
+border-style: solid;
+border-width: 2px;
+border-color: #001200;
+border-radius: 5px;
+display:inline-block;
+}
+
+div.smallcam{
+border-style: solid;
+border-width: 2px;
+border-color: #001200;
+border-radius: 5px;
+width:30%;
+margin-top:0px;
+margin-bottom:5px;
+margin-left:0px;
+margin-right:5px;
+
+display:inline-block;
+float:left;
+}
+
+#maincam{
+}
+#smallcam{
+}
+
+div.sixty{
+width:100%;
+float:left;
+}
+
+div.info{
+font-family: Actor, sans-serif;
+border-style: solid;
+}
+
+div.chat{
+font-family: Actor, sans-serif;
+width: 60%;
+}
+
+/*details*/
+ul{
+list-style-image: none;
+list-style-type: none;
+}
+div.header{
+display:inline-block;
+padding:10px;
+width:100%;
+float:left;
+position:relative;
+}
+div.search{
+position:absolute;
+bottom:0;
+}
+button{
+box-shadow:2px 2px 2px #000000;
+border-radius:2px;
+font-style:'Denk One', Actor, Arial, Sans-serif;
+}
+table, tr, td, th{
+font-family: Actor, sans-serif;
+font-size: 1.3em;
+}
+/*createAccount.php*/
+select,option,form{
+font-family: Actor, sans serif;
+font-size: 1.2em;
+}
+input{
+font-family: Gudea, sans serif;
+box-shadow:2px 2px 2px #000000;
+border-radius:2px;
+border:1px solid;
+font-family: Actor, sans-serif;
+font-size: 1.1em;
+}
+
+div.form{
+box-shadow:2px 2px 2px #000000;
+border:2px groove;
+border-radius:2px;
+}
+
+
+/*The below is all bootstrap stuff*/
 form.master{
 margin:5px;
 padding:5px;
@@ -13,46 +155,58 @@ body {
   padding-bottom: 40px;
 }
 
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  background-color: transparent;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
 /* Customize the nav-justified links to be fill the entire space of the .navbar */
 
-.nav-justified, #search {
-  background-color: #EDF1F2;
-  border-radius: 1px;
+.nav-justified {
+  background-color: #FFFFFF;
+  border-radius: 5px;
   border: 1px solid #ccc;
+  margin: 5px;
   
 }
 .nav-justified > li > a {
-  padding-top: 1px;
-  padding-bottom: 1px;
-  color: #000000;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #101852;
   font-weight: none;
-  font-size: 2em;
+  font-size: 3em;
   font-variant: small-caps;
+
   text-align: center;
   border-bottom: 1px solid #d5d5d5;
-  background-color: #EDF1F2; /* Old browsers */
+  background-color: #e5e5e5; /* Old browsers */
   background-repeat: repeat-x; /* Repeat the gradient */
-  background-image: -moz-linear-gradient(top, #EDF1F2 0%, #e5e5e5 100%); /* FF3.6+ */
+  background-image: -moz-linear-gradient(top, #f5f5f5 0%, #e5e5e5 100%); /* FF3.6+ */
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f5f5f5), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
-  background-image: -webkit-linear-gradient(top, #EDF1F2 0%,#e5e5e5 100%); /* Chrome 10+,Safari 5.1+ */
-  background-image: -ms-linear-gradient(top, #EDF1F2 0%,#e5e5e5 100%); /* IE10+ */
-  background-image: -o-linear-gradient(top, #EDF1F2 0%,#e5e5e5 100%); /* Opera 11.10+ */
+  background-image: -webkit-linear-gradient(top, #f5f5f5 0%,#e5e5e5 100%); /* Chrome 10+,Safari 5.1+ */
+  background-image: -ms-linear-gradient(top, #f5f5f5 0%,#e5e5e5 100%); /* IE10+ */
+  background-image: -o-linear-gradient(top, #f5f5f5 0%,#e5e5e5 100%); /* Opera 11.10+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
-  background-image: linear-gradient(top, #EDF1F2 0%,#e5e5e5 100%); /* W3C */
+  background-image: linear-gradient(top, #f5f5f5 0%,#e5e5e5 100%); /* W3C */
 }
 .nav-justified > .active > a,
 .nav-justified > .active > a:hover,
-.nav-justified > .active > a:focus, #search {
+.nav-justified > .active > a:focus {
   background-color: #ddd;
   background-image: none;
   box-shadow: inset 0 3px 7px rgba(0,0,0,.15);
 }
-.nav-justified > li:first-child > a, #search {
-  border-radius: 2px 2px 0 0;
+.nav-justified > li:first-child > a {
+  border-radius: 5px 5px 0 0;
 }
 .nav-justified > li:last-child > a {
   border-bottom: 0;
-  border-radius: 0 0 2px 2px;
+  border-radius: 0 0 5px 5px;
 }
 
 @media (min-width: 768px) {
@@ -65,10 +219,10 @@ body {
   }
   .nav-justified > li:first-child > a {
     border-left: 0;
-    border-radius: 2px 0 0 2px;
+    border-radius: 5px 0 0 5px;
   }
   .nav-justified > li:last-child > a {
-    border-radius: 0 2px 2px 0;
+    border-radius: 0 5px 5px 0;
     border-right: 0;
   }
 }
@@ -6862,4 +7016,27 @@ tr.visible-print {
 th.visible-print,
 td.visible-print {
   display: none !important;
+}
+
+@media print {
+  .visible-print {
+    display: block !important;
+  }
+  tr.visible-print {
+    display: table-row !important;
+  }
+  th.visible-print,
+  td.visible-print {
+    display: table-cell !important;
+  }
+  .hidden-print {
+    display: none !important;
+  }
+  tr.hidden-print {
+    display: none !important;
+  }
+  th.hidden-print,
+  td.hidden-print {
+    display: none !important;
+  }
 }

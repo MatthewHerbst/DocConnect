@@ -15,44 +15,46 @@ body {
 
 /* Customize the nav-justified links to be fill the entire space of the .navbar */
 
-.nav-justified, #search {
-  background-color: #EDF1F2;
-  border-radius: 1px;
+.nav-justified {
+  background-color: #FFFFFF;
+  border-radius: 5px;
   border: 1px solid #ccc;
+  margin: 5px;
   
 }
 .nav-justified > li > a {
-  padding-top: 1px;
-  padding-bottom: 1px;
-  color: #000000;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #101852;
   font-weight: none;
-  font-size: 2em;
+  font-size: 3em;
   font-variant: small-caps;
+
   text-align: center;
   border-bottom: 1px solid #d5d5d5;
-  background-color: #EDF1F2; /* Old browsers */
+  background-color: #e5e5e5; /* Old browsers */
   background-repeat: repeat-x; /* Repeat the gradient */
-  background-image: -moz-linear-gradient(top, #EDF1F2 0%, #e5e5e5 100%); /* FF3.6+ */
+  background-image: -moz-linear-gradient(top, #f5f5f5 0%, #e5e5e5 100%); /* FF3.6+ */
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f5f5f5), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
-  background-image: -webkit-linear-gradient(top, #EDF1F2 0%,#e5e5e5 100%); /* Chrome 10+,Safari 5.1+ */
-  background-image: -ms-linear-gradient(top, #EDF1F2 0%,#e5e5e5 100%); /* IE10+ */
-  background-image: -o-linear-gradient(top, #EDF1F2 0%,#e5e5e5 100%); /* Opera 11.10+ */
+  background-image: -webkit-linear-gradient(top, #f5f5f5 0%,#e5e5e5 100%); /* Chrome 10+,Safari 5.1+ */
+  background-image: -ms-linear-gradient(top, #f5f5f5 0%,#e5e5e5 100%); /* IE10+ */
+  background-image: -o-linear-gradient(top, #f5f5f5 0%,#e5e5e5 100%); /* Opera 11.10+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
-  background-image: linear-gradient(top, #EDF1F2 0%,#e5e5e5 100%); /* W3C */
+  background-image: linear-gradient(top, #f5f5f5 0%,#e5e5e5 100%); /* W3C */
 }
 .nav-justified > .active > a,
 .nav-justified > .active > a:hover,
-.nav-justified > .active > a:focus, #search {
+.nav-justified > .active > a:focus {
   background-color: #ddd;
   background-image: none;
   box-shadow: inset 0 3px 7px rgba(0,0,0,.15);
 }
-.nav-justified > li:first-child > a, #search {
-  border-radius: 2px 2px 0 0;
+.nav-justified > li:first-child > a {
+  border-radius: 5px 5px 0 0;
 }
 .nav-justified > li:last-child > a {
   border-bottom: 0;
-  border-radius: 0 0 2px 2px;
+  border-radius: 0 0 5px 5px;
 }
 
 @media (min-width: 768px) {
@@ -65,10 +67,10 @@ body {
   }
   .nav-justified > li:first-child > a {
     border-left: 0;
-    border-radius: 2px 0 0 2px;
+    border-radius: 5px 0 0 5px;
   }
   .nav-justified > li:last-child > a {
-    border-radius: 0 2px 2px 0;
+    border-radius: 0 5px 5px 0;
     border-right: 0;
   }
 }
