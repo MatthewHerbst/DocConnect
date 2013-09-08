@@ -9,7 +9,6 @@
 include_once 'functionsneeded.php';
 
 
-
 $membersTableFields = "username VARCHAR(28), password VARCHAR(128),".
 					"firstname VARCHAR(28), lastname VARCHAR(28), ".
 					"DOB VARCHAR(28), email VARCHAR(28), ".
