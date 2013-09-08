@@ -50,10 +50,10 @@ echo "<title>MedConnect - $userstr</title>
        <li><a href='viewProfile.php?user=$user'>Profile</a></li>
        <li><a href='leaderboard.php'>Leaderboard</a></li>
        <li><form style='background-color:#EDF1F2; border-color:#EDF1F2;' method = 'post' action = 'search.php'>
-             <input id='search' type='text' placeholder='Press Enter to Search' style='width:200px;' name='search' class='form-control'></form></li>"
+             <input id='search' type='text' placeholder='Press Enter to Search' style='width:200px;' name='search' class='form-control'></form></li>";
 if($logInStatus)
 {
-	echo "<li><a href='logout.php'>Logout?</a></li>''"
+	echo "<li><a href='logout.php'>Logout?</a></li>'";
 }
 
 ?>
