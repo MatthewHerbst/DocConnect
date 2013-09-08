@@ -81,9 +81,9 @@ echo
 			echo
 			"<li><a href='#contact'>Contact</a></li>
           </ul>
-		  <form class='navbar-form'>
+		  <form class='navbar-form navbar-right' method='post' action='search.php'>
 			<div class='form-group'>
-				  <input type='text' placeholder='Search MedConnect' class='form-control'>
+				  <input type='text' name='search' placeholder='Search MedConnect' class='form-control'>
 				  <button type='submit' class='btn btn-success'>Search</button>
 			</div>
 		  </form>
