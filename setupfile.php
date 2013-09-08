@@ -17,8 +17,7 @@ createTable('members', $membersTableFields);
 
 
 $doctorsTableFields = "username VARCHAR(28), hospital VARCHAR(28),".
-						"specialty VARCHAR(28), education VARCHAR(30), ".
-						"UNIQUE INDEX(username)";
+						"specialty VARCHAR(28), education VARCHAR(30), UNIQUE INDEX(username)";
 createTable('doctors', $doctorsTableFields);
 
 
