@@ -1,7 +1,7 @@
 <?
 include_once 'head.php';
 
-$doctorsResult makeQuery("SELECT * FROM doctors");
+$doctorsResult =  makeQuery("SELECT * FROM doctors");
 
 $numDoctors = mysql_num_rows($doctorsResult);
 
