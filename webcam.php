@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<?php include_once 'head.php'; $_SESSION['user'] = 'Matt'; ?>
+<?php include_once 'head.php'; $temp = 'Matt'; ?>
 <script type='text/javascript'>
 	function changeCams(cam1, cam2){
 		var c3;
