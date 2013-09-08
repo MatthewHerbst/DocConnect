@@ -2,6 +2,7 @@
 
 // Prompt the user for a name to use.
 var name = "<?php echo $temp; ?>";
+console.log(name);
 alert(name);
 
 // Get a reference to the presence data in Firebase.
