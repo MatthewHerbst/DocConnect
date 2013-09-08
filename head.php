@@ -27,7 +27,7 @@ require_once 'tok.php';
 
 
 $userstr = 'Guest';
-
+$user = 'Guest';
 if(isset($_SESSION['user'])) {
   $user = $_SESSION['user'];
   $logInStatus = TRUE;
