@@ -68,36 +68,44 @@ echo
             <span class='icon-bar'></span>
             <span class='icon-bar'></span>
           </button>
-          <a class='navbar-brand' href='#'>MedConnect</a>
+          <a class='navbar-brand' href='index.php'>MedConnect</a>
         </div>
         <div class='navbar-collapse collapse'>
           <ul class='nav navbar-nav'>
-            <li class='active'><a href='#'>Home</a></li>";
+            <li class='active'><a href='index.php'>Home</a></li>";
 			if($logInStatus) {
-				echo "<li><a href='#about'>Consult</a></li>";
+				echo "<li><a href='webcam.php'>Consult</a></li>";
 			} else {
-				echo "<li><a href='#about'>About</a></li>";
+				echo "<li><a href='about.php'>About</a></li>";
             }
 			echo
-			"<li><a href='#contact'>Contact</a></li>
-			<li class='dropdown'>
-				<a href='#' class='dropdown-toggle' data-toggle='dropdown'>My MedConnect<b class='caret'></b></a>
-				<ul class='dropdown-menu'>
-					<li><a href='viewProfile?$user'>View Profile</a></li>
-					<li class='divider'></li>
-					<li><a href='editProfile.php'>Edit My Profile</a></li>
-				</ul>	
-			</li>
-          </ul>
+			"<li><a href='#'>Contact</a></li>";
+			if($logInStatus) {
+				echo "<li class='dropdown'>
+					<a href='#' class='dropdown-toggle' data-toggle='dropdown'>My MedConnect<b class='caret'></b></a>
+					<ul class='dropdown-menu'>
+						<li><a href='#'>Manage Favorites</a></li>
+						<li><a href='#'>View History</a></li>
+						<li class='divider'></li>
+						<li><a href='#'>Edit My Profile</a></li>
+						<li><a href='#'>Settings</a></li>
+					</ul>	
+				</li>";
+			}
+			echo
+          "</ul>
 		  <!--<form method='post' action='search.php' width='75px'>
 			<div class='form-group' width='75px'>
 				  <input type='text' name='search' placeholder='Search MedConnect' class='form-control' width='75px'>
 				  <button type='submit' class='btn btn-success'>Search</button>
 			</div>
 		  </form>-->";
-            if(!$logInStatus) { //If they are not logged in, let them log in
+            if(!$logInStatus) { //If they are not logged in, let them log in or register
 				echo
-				"<form class='navbar-form navbar-right' method='post' action='login.php'>
+				"<form class='navbar-form navbar-right' action='createAccount.php'>
+					<button type='submit' class='btn btn-success'>Register</button>
+				</form>
+				<form class='navbar-form navbar-right' method='post' action='login.php'>
 					<div class='form-group'>
 						<input type='text' placeholder='Email' maxlength='16' name='enteredUsername' class='form-control'>
 					</div>
