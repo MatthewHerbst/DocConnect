@@ -45,9 +45,12 @@ if(isset($_SESSION['user'])) {
 	$logInStatus = FALSE;
 }
 
-//Place the rest of the head as well as the nav bar
+//Place the rest of the head
 echo "<title>MedConnect - $userstr</title>
-</head>
+</head>";
+
+/*
+echo "
 <body>
 	<div class='header' style='width:15%'><img src='img/logo.png' style='width:100%'></div>
 	<div class='header' style='width:80%'>
@@ -66,6 +69,47 @@ echo "<title>MedConnect - $userstr</title>
 				echo "<li><a href='logout.php'>Logout?</a></li>'";
 			}
 	echo "</ul></div>";
+*/
+
+//Fixed navbar
+echo
+    "<div class='navbar navbar-default navbar-fixed-top'>
+	<div class='container'>
+        <div class='navbar-header'>
+          <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </button>
+          <a class='navbar-brand' href='#'><img src='img/logo.png'></a>
+        </div>
+        <div class='navbar-collapse collapse'>
+          <ul class='nav navbar-nav'>
+            <li class='active'><a href='index.php'>Home</a></li>
+            <li><a href='about.php'>About</a></li>
+            <li><a href='contact.php'>Contact</a></li>
+			<li><a href='leaderboard.php'>Leaderboard</a></li>
+          </ul>
+          <ul class='nav navbar-nav navbar-right'>";
+            if($logInStatus) { //Give option to log out if logged in
+				echo "<li class='dropdown'>
+				  <a href='#' class='dropdown-toggle' data-toggle='dropdown'>Profile <b class='caret'></b></a>
+				  <ul class='dropdown-menu'>
+					<li><a href='#'>Manage Favorites</a></li>
+					<li><a href='#'>My History</a></li>
+					<li class='divider'></li>
+					<li><a href='#'>Edit Profile</a></li>
+					<li><a href='#'>Settings</a></li>
+				  </ul>
+				</li>
+				<li><a href='logout.php'>Log Out</a></li>";
+			} else {
+				//TODO: a login and register option
+			}
+          echo "</ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>";
 	
 	//The list of people who are online (is only populated if you are logged in)
 	echo "<div id='onlineList'>"; if(!isset($_SESSION['user'])){ echo "Please log in to see who is online"; } echo "</div>";
