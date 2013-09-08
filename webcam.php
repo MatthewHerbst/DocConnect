@@ -1,5 +1,4 @@
-<!DOCTYPE HTML>
-<?php include_once 'head.php'; $temp = 'Matt'; ?>
+<?php include_once 'head.php'; ?>
 <script type='text/javascript'>
 	function changeCams(cam1, cam2){
 		var c3;
@@ -7,11 +6,7 @@
 		document.getElementById(cam1).innerHTML = document.getElementById(cam2).innerHTML;
 		document.getElementById(cam2).innerHTML = c3;
 	};
-	
-	var name = "<?php echo $temp; ?>";
 </script>
-
-<script type='text/javascript' src='js/onlineList.js'></script>
 
 <div class='container'>
 	<div class='cam'>
@@ -22,7 +17,7 @@
 			<script type='text/javascript'>
 				//Print out a small box for every doctor in the session, except the person in the large box
 				
-				var myDataRef = new Firebase('https://matthewherbst.firebaseIO.com/');
+				//var myDataRef = new Firebase('https://matthewherbst.firebaseIO.com/');
 				
 			</script>
 			<div class='smallcam' id='maincam'>

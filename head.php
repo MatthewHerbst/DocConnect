@@ -10,8 +10,11 @@
 	<script type='text/javascript' src='js/onlineList.js'></script>
 	<link rel='stylesheet' href='styles/bootstrap/bootstrap.css' type='text/css'/>
 	<link rel='stylesheet' href='styles/styles.css' type='text/css'/>
-	<link rel="icon" type="image/png" href="img/favicon.png">
+	<link rel='icon' type='image/png' href='img/favicon.png'>
 <?php
+ini_set('display_errors',1); 
+ error_reporting(E_ALL);
+
 session_start();
  
 //db and other functions
@@ -26,13 +29,15 @@ require_once 'tokbox/Opentok-PHP-SDK/OpenTokSession.php';
 require_once 'tok.php';
 
 $userstr = 'Guest';
-
+$user = 'Guest';
 if(isset($_SESSION['user'])) {
   $user = $_SESSION['user'];
   $logInStatus = TRUE;
   $userstr = "";
-} else 
-{
+  
+  //Print the user as a globally accessible javascript variable
+  echo "<script type='text/javascript'>var user = " . $_SESSION['user'] . ";</script>";
+} else {
   $logInStatus = FALSE;
 }
 
@@ -44,15 +49,18 @@ echo "<title>MedConnect - $userstr</title>
        <li><a href='index.php'>Home</a></li>
        <li><a href='viewProfile.php?user=$user'>Profile</a></li>
        <li><a href='leaderboard.php'>Leaderboard</a></li>
-       <li><a href='logout.php'>Logout?</a></li>
        <li><form style='background-color:#EDF1F2; border-color:#EDF1F2;' method = 'post' action = 'search.php'>
-             <input id='search' type='text' placeholder='Press Enter to Search' style='width:200px;' name='search' class='form-control'></form></li>
-     </ul>
-   </div>
+     <input id='search' type='text' placeholder='Press Enter to Search' style='width:200px;' name='search' class='form-control'></form></li>";
+if($logInStatus)
+{
+	echo "<li><a href='logout.php'>Logout?</a></li>'";
+}
 
+
+echo "</ul></div>
 <div id='onlineList'>
 </div>";
 
-   ?>
+?>
+        
 
-</ul></div>
