@@ -20,7 +20,7 @@ if(isset($_POST['text']))
     $result = makeQuery("SELECT * FROM doctorProfiles WHERE username = '$user'");
     if(mysql_num_rows($result))
     {
-        makeQuery("UPDATE doctorProfiles SET text='$text' WHERE username='$user'");
+        makeQuery("UPDATE doctorProfiles SET bio='$text' WHERE username='$user'");
     }
     else
     {
