@@ -39,9 +39,7 @@ if(isset($_SESSION['user'])) {
 echo "<title>MedConnect - $userstr</title>
 	</head><body>
 	<div id='header'><img src='logo.png' height='100px'>
-        </div>
-<div>
-	  <form class='navbar-form navbar-right'>
+          <form class='navbar-form navbar-right'>
             <div class='form-group'>
               <input type='text' placeholder='Search' name='fields' class='form-control'>
             </div>
@@ -54,7 +52,7 @@ echo "<title>MedConnect - $userstr</title>
           <li class='active'><a href='index.php'>Home</a></li>
           <li><a href='about.php'>About</a></li>
           <li><a href='leaderboard.php'>Leaderboard</a></li>
-	  <li><a href='logout.php'>You are logged in as $userstr. Logout?</a></li>
+	  <li style='font-size: 1em;'><a href='logout.php'>$userstr. Logout?</a></li>
         </ul>
       </div>";
 ?>
