@@ -2,7 +2,6 @@
 include_once 'head.php';
 include_once 'login.php';
 
-echo "user = ".$user;
 if(isset($_POST['reviewText']) && $_POST['rating'])
 {
 	$reviewText = $_POST['reviewText'];
@@ -42,6 +41,11 @@ echo <<<_END
 
 _END;
 
+}
+else
+{
+	echo "<h3>This is your profile, to edit, click ".
+		"<a href='editProfile.php'>here</a></h3>"; 
 }
 include_once 'footer.php';
 
