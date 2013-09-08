@@ -86,15 +86,12 @@ float:left;
 div.info{
 font-family: Actor, sans-serif;
 border-style: solid;
-
 }
 
 div.chat{
 font-family: Actor, sans-serif;
 width: 60%;
 }
-
-
 
 /*details*/
 ul{
@@ -117,6 +114,10 @@ box-shadow:2px 2px 2px #000000;
 border-radius:2px;
 font-style:'Denk One', Actor, Arial, Sans-serif;
 }
+table, tr, td, th{
+font-family: Actor, sans-serif;
+font-size: 1.3em;
+}
 /*createAccount.php*/
 select,option,form{
 font-family: Actor, sans serif;
@@ -135,7 +136,6 @@ div.form{
 box-shadow:2px 2px 2px #000000;
 border:2px groove;
 border-radius:2px;
-
 }
 
 

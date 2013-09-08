@@ -49,10 +49,10 @@ function sanitizeString($var)
 
 function showProfile($user)
 {
-    echo "<h2>$user</h3><br />";
+    echo "<h2>$user</h2>";
     if (file_exists("profilePhotos/$user.jpg"))
     {
-        echo "<img src = 'profilePhotos/$user.jpg' align = 'left' />";
+        echo "<img style='border-radius:2px; border-radius:2px;' src = 'profilePhotos/$user.jpg' align = 'left' />";
     }
 
     $result = makeQuery("SELECT * FROM doctorProfiles WHERE username = '$user'");
@@ -74,7 +74,7 @@ function showProfile($user)
 	}
 	else
 	{
-		echo "<span>There are Currently No Reviews, Be the first to write one, below.
+		echo "<span style='font-size:1.4em;'>There are currently no reviews, Be the first to write one, below.
                 </span>";
 	}
 	while($numReviews > 0)

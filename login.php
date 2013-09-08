@@ -25,7 +25,7 @@ if (isset($_POST['enteredUsername']) && !$logInStatus)
             $_SESSION['user'] = $enteredUsername;
             $_SESSION['pass'] = $enteredPass;
 			$logInStatus = TRUE;
-            header("Location: http://localhost/DocConnect/index.php");
+			header("Location: http://ec2-54-200-14-50.us-west-2.compute.amazonaws.com/DocConnect/index.php");
             die("You are now logged in. Please <a href='members.php'?view=$enteredUsername>Click Here</a> To Continue");
         }
     }

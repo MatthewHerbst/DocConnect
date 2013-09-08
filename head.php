@@ -52,11 +52,12 @@ echo "<title>MedConnect - $userstr</title>
       <div class='masthead'>
         <ul class='nav nav-justified'>
           <li class='active'><a href='index.php'>Home</a></li>
-          <li><a href='editProfile.php'>Edit Your Profile</a></li>
+          <li><a href='editProfile.php'>Edit Profile</a></li>
           <li><a href='leaderboard.php'>Leaderboard</a></li>";
 	if($logInStatus)
 	{
-		echo "<li style='font-size: 1em;'>
+		echo "<li><a href='viewProfile.php?user=$user'>View Your Profile</a></li>
+				<li style='font-size: 1em;'>
 				<a href='logout.php'>Logout?</a></li>";
 	}  
 ?>
