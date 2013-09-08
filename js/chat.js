@@ -1,4 +1,4 @@
-var myDataRef = new Firebase('https://matthewherbst.firebaseIO.com/');
+var myDataRef = new Firebase('https://matthewherbst.firebaseIO.com/docconnect/chat');
 	
 	$('#messageInput').keypress(function(e) {
 		if(e.keyCode == 13) {
