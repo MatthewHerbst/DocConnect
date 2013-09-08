@@ -77,7 +77,7 @@ function showProfile($user)
     {
         $row = mysql_fetch_row($result);
         echo stripslashes($row[1]) . "<br clear='left' /> <br/>".
-			stripslashes($row[2]);
+			"My Rating is: ".stripslashes($row[2]);
     }
 	$numReviews = mysql_num_rows($resultReviews);
 	echo "<h3>This Doctor's Reviews</h3><br />";
