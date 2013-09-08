@@ -6,12 +6,15 @@
           <div class="row">
             <div class="col-6 col-sm-6 col-lg-4">
               <a href='viewProfile?userToDisplay=herbstmb'><p>M. Herbst - Pediatrician</p><a/>
+			  <div id='doc1' class='doc1'></div>
             </div><!--/span-->
             <div class="col-6 col-sm-6 col-lg-4">
               <a href='#'><p>M. Smith - Obstetrition</p></a>
+			  <div id='doc2' class='doc2'></div>
             </div><!--/span-->
             <div class="col-6 col-sm-6 col-lg-4">
               <a href='viewProfile?userToDisplay=adityans'><p>A. Shankar - Cardiologist</p><a/>
+			  <div id='doc3' class='doc3'></div>
             </div><!--/span-->
           </div><!--/row-->
         </div><!--/span-->
@@ -72,7 +75,7 @@
 	}
  
 	var publisher = TB.initPublisher(apiKey, 'myVideo', {width:800, height:500});
-	var session   = TB.initSession(sessionId);
+	var session   = TB.initSession(sessionId, 'doc1', {width:75, height:75});
  
 	session.connect(apiKey, token);
 	session.addEventListener("sessionConnected", sessionConnectedHandler);
