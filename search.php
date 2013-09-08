@@ -14,7 +14,7 @@ else
 }
 
 echo "<h2>Search Results</h2>";
-
+echo "$searchRequest";
 $nameResult = makeQuery("SELECT * FROM members WHERE doctorStatus = 'TRUE' AND (firstname = '$searchRequest' OR lastname = '$searchRequest')");
 
 $docInfoResult = makeQuery("SELECT * FROM doctors WHERE specialty = '$searchRequest' OR hospital ='$searchRequest'");
@@ -43,6 +43,7 @@ while($numInfoRows > 0)
 	$lastname = $membersInfoRow['lastname'];
 	echo "<li class='doctorListing'>Dr. ".$firstname." ".$lastname.
 		" <a href = 'viewProfile?userToDisplay=$userName'>View Their Profile</a></li>";
+	--$numInfoRows;
 }
 
 include_once 'footer.php';
