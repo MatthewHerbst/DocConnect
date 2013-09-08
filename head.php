@@ -81,7 +81,7 @@ echo
 			echo
 			"<li><a href='#contact'>Contact</a></li>
           </ul>
-		  <form class='navbar-form>
+		  <form class='navbar-form'>
 			<div class='form-group'>
 				  <input type='text' placeholder='Search MedConnect' class='form-control'>
 				  <button type='submit' class='btn btn-success'>Search</button>
