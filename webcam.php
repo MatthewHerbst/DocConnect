@@ -41,6 +41,7 @@
 </script>
 
 <div class='container'>
+	<div id='myPublisherDiv'>hello</div>
 	<div class='cam'>
 		<div id='currentDoctor' class='doctor'>
 			<img src='img/pic1.jpg' width='100%'>
