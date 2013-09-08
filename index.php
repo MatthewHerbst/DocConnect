@@ -32,19 +32,9 @@ include_once 'login.php';
 			<div id='onlineList'></div>
 			<hr>
 			<div id='messagesDiv'></div>
-            <ul class="nav">
-              <li>Sidebar</li>
-              <li class="active"><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li>Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li>Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-            </ul>
+			<p><b>Caht with others online!!!</b></p>
+			<hr>
+			<input type='text' id='messageInput' placeholder='Message'>
           </div><!--/.well -->
         </div><!--/span-->
       </div><!--/row-->
@@ -52,7 +42,6 @@ include_once 'login.php';
       <hr>
 	  
 <input type='text' id='nameInput' placeholder='Name'>
-<input type='text' id='messageInput' placeholder='Message'>
 
 <script type='text/javascript'>
 	var myDataRef = new Firebase('https://matthewherbst.firebaseIO.com/');
