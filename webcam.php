@@ -20,13 +20,10 @@
 		</div>
 		<div id='doctors'>
 			<script type='text/javascript'>
+				//Print out a small box for every doctor in the session, except the person in the large box
+				
 				var myDataRef = new Firebase('https://matthewherbst.firebaseIO.com/');
 				
-				//TODO: pull the list of doctors in this session, except for the currently selected doctor
-				$('<div/>')
-				.attr('id', user.name)
-				.text(user.name + ' is currently ' + user.status)
-				.appendTo('#doctors');
 			</script>
 			<div class='smallcam' id='maincam'>
 				<img src='img/pic2.jpg' width='100%'>

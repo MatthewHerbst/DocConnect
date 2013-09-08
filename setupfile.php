@@ -4,6 +4,7 @@
 <title>Setup</title>
 <h2>Creating Tables and Setting up Database</h2>
 </head>
+</html>
 
 <?php
 include_once 'functionsneeded.php';
