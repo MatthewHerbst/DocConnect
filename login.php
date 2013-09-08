@@ -1,5 +1,5 @@
 <?php
-
+include_once 'head.php';
 $error = $enteredUsername = $enteredPass = "";
 
 if (isset($_POST['enteredUsername']) && !$logInStatus)
