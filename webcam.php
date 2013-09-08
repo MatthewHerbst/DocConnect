@@ -113,7 +113,7 @@
     subscribeToStreams(event.streams);
   }
  
-  var publisher = TB.initPublisher(apiKey);
+  var publisher = TB.initPublisher(apiKey, 'myPublisherDiv');
   var session   = TB.initSession(sessionId);
  
   session.connect(apiKey, token);
