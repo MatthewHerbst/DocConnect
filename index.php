@@ -35,14 +35,13 @@ include_once 'login.php';
 			<p><b>Chat with others!!!</b></p>
 			<div id='messagesDiv'></div>
 			<hr>
+			<input type='text' id='nameInput' placeholder='Name'>
 			<input type='text' id='messageInput' placeholder='Message'>
           </div><!--/.well -->
         </div><!--/span-->
       </div><!--/row-->
 
       <hr>
-	  
-<input type='text' id='nameInput' placeholder='Name'>
 
 <script type='text/javascript'>
 	var myDataRef = new Firebase('https://matthewherbst.firebaseIO.com/');
