@@ -84,6 +84,7 @@ if($logInStatus)
 
 echo <<<_END
 <div class='sixty' align='center'>
+<h2>Sign Up</h2>
 <div style='width:40%'>
 <form method = 'post' action = 'saveAccount.php?save=yes' 
 <div class='form' align='center'>
