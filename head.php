@@ -81,22 +81,23 @@ echo
 			echo
 			"<li><a href='#contact'>Contact</a></li>
           </ul>
-		  <form class='navbar-form navbar-right' method='post' action='search.php'>
+		  <form method='post' action='search.php'>
 			<div class='form-group'>
 				  <input type='text' name='search' placeholder='Search MedConnect' class='form-control'>
 				  <button type='submit' class='btn btn-success'>Search</button>
 			</div>
-		  </form>
-          <form class='navbar-form navbar-right'>";
+		  </form>";
             if(!$logInStatus) { //If they are not logged in, let them log in
 				echo
-				"<div class='form-group'>
-				  <input type='text' placeholder='Email' class='form-control'>
-				</div>
-				<div class='form-group'>
-				  <input type='password' placeholder='Password' class='form-control'>
-				</div>
-				<button type='submit' class='btn btn-success'>Sign in</button>";
+				"<form class='navbar-form navbar-right'>
+					<div class='form-group'>
+						<input type='text' placeholder='Email' class='form-control'>
+					</div>
+					<div class='form-group'>
+						<input type='password' placeholder='Password' class='form-control'>
+					</div>
+					<button type='submit' class='btn btn-success'>Sign in</button>
+				</form>";
 			} else { //They are logged in, show them profile info
 				echo
 				"<li class='dropdown'>
@@ -110,11 +111,13 @@ echo
 					<li><a href='#'>Separated link</a></li>
 					<li><a href='#'>One more separated link</a></li>
 				  </ul>
-				</li>";
+				</li>
+				<form class='navbar-form navbar-right' action='logout.php'>
+					<button type='submit' class='btn btn-success'>Log Out</button>
+				</form>";
 			}
 			echo
-          "</form>
-        </div><!--/.navbar-collapse -->
+          "</div><!--/.navbar-collapse -->
       </div>
     </div>";
 ?>
