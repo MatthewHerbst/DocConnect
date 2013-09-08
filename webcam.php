@@ -6,7 +6,9 @@
 		c3 = document.getElementById(cam1).innerHTML;
 		document.getElementById(cam1).innerHTML = document.getElementById(cam2).innerHTML;
 		document.getElementById(cam2).innerHTML = c3;
-	}  
+	};
+	
+	var name = "<?php echo $temp; ?>";
 </script>
 
 <script type='text/javascript' src='js/onlineList.js'></script>
