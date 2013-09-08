@@ -81,6 +81,15 @@ function showProfile($user)
     }
 	$numReviews = mysql_num_rows($resultReviews);
 	echo "<h3>This Doctor's Reviews</h3><br />";
+	if ($numReviews)
+	{
+		echo "<table class='userReviews'><tr><th>Rating</th><th><Review></tr>";	
+	}
+	else
+	{
+		echo "<span>There are Currently No Reviews, Be the first to write one, below.
+                </span>";
+	}
 	while($numReviews > 0)
 	{
 		$reviewRow = mysql_fetch_assoc($resultReviews);
