@@ -1,8 +1,8 @@
 //Code source: https://www.firebase.com/tutorial/#session/bkb5rgke1v5
 
 // Prompt the user for a name to use.
-alert('<?php $_SESSION['user']; ?>');
-var name = '<?php $_SESSION['user']; ?>'
+var name = '<?php echo $_SESSION['user']; ?>'
+alert(name);
 
 // Get a reference to the presence data in Firebase.
 var userListRef = new Firebase("https://docconnect.firebaseio.com/presence");
