@@ -83,7 +83,7 @@ echo
           </ul>
 		  <form method='post' action='search.php'>
 			<div class='form-group'>
-				  <input type='text' name='search' placeholder='Search MedConnect' class='form-control'>
+				  <input type='text' name='search' placeholder='Search MedConnect' class='form-control' width='50px'>
 				  <button type='submit' class='btn btn-success'>Search</button>
 			</div>
 		  </form>";
