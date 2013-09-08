@@ -5,18 +5,18 @@
 			<div id='myVideo' class='myVideo'></div>
           <div class="row">
             <div class="col-6 col-sm-6 col-lg-4">
-              <h2>Heading1</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <h2>K. Heart</h2>
+              <p>obg yn</p>
               <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
             </div><!--/span-->
             <div class="col-6 col-sm-6 col-lg-4">
-              <h2>Heading2</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <h2>M. Smith</h2>
+              <p>General Surgeon</p>
               <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
             </div><!--/span-->
             <div class="col-6 col-sm-6 col-lg-4">
-              <h2>Heading3</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <h2>D. Lamar</h2>
+              <p>Neurologists</p>
               <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
             </div><!--/span-->
           </div><!--/row-->
@@ -77,7 +77,7 @@
 		subscribeToStreams(event.streams);
 	}
  
-	var publisher = TB.initPublisher(apiKey, 'myVideo', {width:400, height:300});
+	var publisher = TB.initPublisher(apiKey, 'myVideo', {width:800, height:500});
 	var session   = TB.initSession(sessionId);
  
 	session.connect(apiKey, token);
