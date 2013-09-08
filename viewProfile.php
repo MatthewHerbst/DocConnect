@@ -37,7 +37,7 @@ if($userToDisplay != $user)
 {
 echo <<<_END
 <div class='sixty' align='center'>
-<h3><a href='addToFavorites?userToAdd=$userToDislay'>
+<h3><a href='addToFavorites?userToAdd=$userToDisplay'>
 Add this Doctor to your Favorites</a></h3><br />
 <h3>Have you worked with this doctor? Leave a Review!</h3>
 <div style='width:40%;'>
