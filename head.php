@@ -7,7 +7,6 @@
 	<script type='text/javascript' src='js/firebase/idle.js'></script>
 	<script type='text/javascript' src='js/tokbox/TB.min.js'></script>
 	<script type='text/javascript' src='js/jquery/jquery-1.10.2.min.js'></script>
-	<script type='text/javascript' src='js/onlineList.js'></script>
 	<link rel='stylesheet' href='styles/bootstrap/bootstrap.css' type='text/css'/>
 	<link rel='stylesheet' href='styles/styles.css' type='text/css'/>
 	<link rel='icon' type='image/png' href='img/favicon.png'>
@@ -34,6 +33,9 @@ if(isset($_SESSION['user'])) {
   $user = $_SESSION['user'];
   $logInStatus = TRUE;
   $userstr = "";
+  
+  //Count the user as being online (fore Firebase)
+  echo "<script type='text/javascript' src='js/onlineList.js'></script>";
   
   //Print the user as a globally accessible javascript variable
   echo "<script type='text/javascript'>var user = " . $_SESSION['user'] . ";</script>";
