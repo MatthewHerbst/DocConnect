@@ -19,8 +19,26 @@ showProfile($userToDisplay);
 
 if($userToDisplay != $user)
 {
+	$favoritesQuery = "SELECT * FROM favorites WHERE username='$user'".
+					" AND favoritedUser='$userToDisplay'";
+	$favoritesResult = makeQuery($favoritesQuery);
+	if(mysql_num_rows($favoritesResult))
+	{
+		echo "<br /><h3>This User is Currently in Your Favorites</h3>";
+	}
+	else
+	{
+		echo "<h3><a href='addToFavorites.php?userToAdd=$userToDislay'>
+		Add this Doctor to your Favorites</a></h3><br />";	
+	}	
+}
+
+if($userToDisplay != $user)
+{
 echo <<<_END
 <div class='sixty' align='center'>
+<h3><a href='addToFavorites?userToAdd=$userToDislay'>
+Add this Doctor to your Favorites</a></h3><br />
 <h3>Have you worked with this doctor? Leave a Review!</h3>
 <div style='width:40%;'>
 <form method = 'post' action = 'viewProfile.php?userToDisplay=$userToDisplay'>
