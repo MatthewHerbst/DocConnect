@@ -45,9 +45,10 @@ if(isset($_SESSION['user'])) {
 	$logInStatus = FALSE;
 }
 
-//Place the rest of the head
+//Place the rest of the head and the start of the body
 echo "<title>MedConnect - $userstr</title>
-</head>";
+</head>
+<body>";
 
 /*
 echo "
