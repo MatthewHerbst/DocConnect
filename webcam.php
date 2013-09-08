@@ -23,15 +23,14 @@
 				var myDataRef = new Firebase('https://matthewherbst.firebaseIO.com/');
 				
 				//TODO: pull the list of doctors in this session, except for the currently selected doctor
-					$('<div/>')
-					.attr('id', user.name)
-					.text(user.name + ' is currently ' + user.status)
-					.appendTo('#doctors');
-				
-				<div class='smallcam' id='maincam'>
-					<img src='img/pic2.jpg' width='100%'>
-				</div>
+				$('<div/>')
+				.attr('id', user.name)
+				.text(user.name + ' is currently ' + user.status)
+				.appendTo('#doctors');
 			</script>
+			<div class='smallcam' id='maincam'>
+				<img src='img/pic2.jpg' width='100%'>
+			</div>
 		</div>
 	</div>
 	<div id='onlineList'></div>
