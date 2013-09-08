@@ -110,8 +110,8 @@ echo
 						<input type='password' placeholder='Password' maxlength='16' name='enteredPass' class='form-control'>
 					</div>
 					<button type='submit' class='btn btn-success'>Sign in</button>
-				</form>
-				<a href='createAccount.php'><button type='submit' class='btn btn-success'>Register</button></a>";
+					<a href='createAccount.php'><button class='btn btn-success'>Register</button></a>
+				</form>";
 			} else { //They are logged in, show them profile info
 				echo
 				"<form class='navbar-form navbar-right' action='logout.php'>
