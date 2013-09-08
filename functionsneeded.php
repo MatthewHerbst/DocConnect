@@ -1,7 +1,4 @@
-<script src='js/jquery/jquery-1.10.2.min.js'></script>
-
 <?php
-
 $dbhost = 'localhost';
 $dbname = 'docconnect';
 $dbuser = 'root';
@@ -11,7 +8,6 @@ $appname = "Doc Connect";
 mysql_connect($dbhost, $dbuser, $dbpass) or die(mysql_error());
 
 mysql_select_db($dbname) or die(mysql_error());
-
 
 echo "<link href='styles.css' rel='stylesheet' type='text/css'>";
 
