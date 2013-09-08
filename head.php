@@ -47,7 +47,7 @@ echo "<title>MedConnect - $userstr</title>
    <div class='header' style='width:80%'>
      <ul class='nav nav-justified'>
        <li><a href='index.php'>Home</a></li>
-       <li><a href='viewProfile.php?user=$user'>Profile</a></li>
+       <li><a href='viewProfile.php?userToDisplay=$user'>Profile</a></li>
        <li><a href='leaderboard.php'>Leaderboard</a></li>
        <li><form style='background-color:#EDF1F2; border-color:#EDF1F2;' method = 'post' action = 'search.php'>
              <input id='search' type='text' placeholder='Press Enter to Search' style='width:200px;' name='search' class='form-control'></form></li>";
