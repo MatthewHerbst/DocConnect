@@ -5,19 +5,13 @@
 			<div id='myVideo' class='myVideo'></div>
           <div class="row">
             <div class="col-6 col-sm-6 col-lg-4">
-              <h2>K. Heart</h2>
-              <p>obg yn</p>
-              <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+              <a href='viewProfile?userToDisplay=herbstmb'><p>M. Herbst - Pediatrician</p><a/>
             </div><!--/span-->
             <div class="col-6 col-sm-6 col-lg-4">
-              <h2>M. Smith</h2>
-              <p>General Surgeon</p>
-              <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+              <a href='#'><p>M. Smith - Obstetrition</p></a>
             </div><!--/span-->
             <div class="col-6 col-sm-6 col-lg-4">
-              <h2>D. Lamar</h2>
-              <p>Neurologists</p>
-              <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+              <a href='viewProfile?userToDisplay=adityans'><p>A. Shankar - Cardiologist</p><a/>
             </div><!--/span-->
           </div><!--/row-->
         </div><!--/span-->
