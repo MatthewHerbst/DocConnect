@@ -23,7 +23,7 @@ $numNameRows = mysql_num_rows($nameResult);
 
 $numInfoRows = mysql_num_rows($docInfoResult);
 
-echo "<ul class='searchResults'>"
+echo "<ul class='searchResults'>";
 while($numNameRows > 0)
 {
 	$nameRow = mysql_fetch_assoc($nameResult);
