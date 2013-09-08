@@ -12,8 +12,8 @@ for($i = 0; $i < $numDoctors; ++$i)
 	$doctorRow = mysql_fetch_assoc($doctorsResult);
 	$doctorUN = $doctorRow['username'];
 	echo "<li>$doctorUN"."    ".
-	"a href = 'viewProfile?userToDisplay=$doctorUN'>View Their Profile".
-	"</a></li?"
+	"<a href = 'viewProfile?userToDisplay=$doctorUN'>View Their Profile".
+	"</a></li>";
 }
 
 echo "<ul></div>";

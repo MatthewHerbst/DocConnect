@@ -6,7 +6,7 @@ if(isset($_POST['reviewText']) && $_POST['rating'])
 {
 	$reviewText = $_POST['reviewText'];
 	$rating = $_POST['rating'];
-	makeQuery("INSERT INTO $reviewsTableName VALUES('$user', '$rating', '$reviewText')");
+	makeQuery("INSERT INTO reviews VALUES('$user', '$rating', '$reviewText')");
 	header("location: viewProfile.php");
 }
 if(isset($_GET['userToDisplay']))
@@ -28,7 +28,7 @@ if($userToDisplay != $user)
 	}
 	else
 	{
-		echo "<h3><a href='addToFavorites.php?userToAdd=$userToDislay'>
+		echo "<h3><a href='addToFavorites.php?userToAdd=$userToDisplay'>
 		Add this Doctor to your Favorites</a></h3><br />";	
 	}	
 }
@@ -37,7 +37,7 @@ if($userToDisplay != $user)
 {
 echo <<<_END
 <div class='sixty' align='center'>
-<h3><a href='addToFavorites?userToAdd=$userToDislay'>
+<h3><a href='addToFavorites?userToAdd=$userToDisplay'>
 Add this Doctor to your Favorites</a></h3><br />
 <h3>Have you worked with this doctor? Leave a Review!</h3>
 <div style='width:40%;'>
