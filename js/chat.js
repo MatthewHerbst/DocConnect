@@ -2,7 +2,7 @@ var myDataRef = new Firebase('https://matthewherbst.firebaseIO.com/');
 	
 	$('#messageInput').keypress(function(e) {
 		if(e.keyCode == 13) {
-			var name = $('#nameInput').val();
+			var name = user;
 			var text = $('#messageInput').val();
 			myDataRef.push({name: name, text: text});
 			$('#messageInput').val('');

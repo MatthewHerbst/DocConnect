@@ -59,7 +59,7 @@
 	var publisher = TB.initPublisher(apiKey, 'myPublisherDiv');
 	var session = TB.initSession(sessionId);
 	
-	session.addEventListener('sessionConnected', function(e){
+	/*session.addEventListener('sessionConnected', function(e){
 		session.publish( publisher );
 		for (var i = 0; i < e.streams.length; i++) {
 			// Make sure we don't subscribe to ourself
@@ -89,48 +89,38 @@
 			session.subscribe(streams[i], div.id);
 		}
 	});
-	session.connect(apiKey, token);
-	
-
+	session.connect(apiKey, token);*/
  
  
  
  
  
  
- 
- 
- 
- 
- 
- 
- 
- /*
 	function sessionConnectedHandler (event) {
-		session.publish( publisher );
-		subscribeToStreams(event.streams);
-	}
-  
-	function subscribeToStreams(streams) {
-		for (var i = 0; i < streams.length; i++) {
-			var stream = streams[i];
-			if (stream.connection.connectionId 
-				!= session.connection.connectionId) {
-				session.subscribe(stream);
-			}
-		}
-	}
-	
-	function streamCreatedHandler(event) {
-		subscribeToStreams(event.streams);
-	}
+     session.publish( publisher );
+     subscribeToStreams(event.streams);
+  }
+  function subscribeToStreams(streams) {
+    for (var i = 0; i < streams.length; i++) {
+        var stream = streams[i];
+        if (stream.connection.connectionId 
+               != session.connection.connectionId) {
+            session.subscribe(stream);
+        }
+    }
+  }
+  function streamCreatedHandler(event) {
+    subscribeToStreams(event.streams);
+  }
  
-	var publisher = TB.initPublisher(apiKey, 'myVideo', {width:800, height:500});
-	var session   = TB.initSession(sessionId);
+  var publisher = TB.initPublisher(apiKey);
+  var session   = TB.initSession(sessionId);
  
-	session.connect(apiKey, token);
-	session.addEventListener("sessionConnected", sessionConnectedHandler);
+  session.connect(apiKey, token);
+  session.addEventListener("sessionConnected", 
+                           sessionConnectedHandler);
  
-	session.addEventListener("streamCreated", streamCreatedHandler);*/
+  session.addEventListener("streamCreated", 
+                           streamCreatedHandler);
 </script>
 <?php include_once 'footer.php'; ?>
