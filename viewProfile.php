@@ -11,7 +11,7 @@ if(isset($_POST['reviewText']) && $_POST['rating'])
 {
 	$reviewText = $_POST['reviewText'];
 	$rating = $_POST['rating'];
-	makeQuery("INSERT INTO reviews VALUES('$user', '$rating', '$reviewText')");
+	makeQuery("INSERT INTO reviews VALUES('$userToDisplay', '$rating', '$reviewText')");
 	header("location: viewProfile.php?userToDisplay=$userToDisplay");
 }
 
